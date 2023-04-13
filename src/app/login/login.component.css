@@ -1,0 +1,32 @@
+.login-card {
+  width: 500px;
+}
+
+.login-card-body {
+  padding: 40px;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; 
+}
+
+.card-button {
+  border-radius: 1rem;
+  border: none;
+  background-color:  #730202;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding: 8px;
+  opacity: 1;
+  margin-top: 10px;
+ }
+
+ *{
+  font-weight: bold;
+  font-size: large;
+  font-family: 'Cedora', sans-serif;
+}

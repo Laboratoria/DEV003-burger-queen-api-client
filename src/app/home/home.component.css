@@ -1,0 +1,85 @@
+*{
+    font-weight: bold;
+    font-size: large;
+}
+
+
+.ticket{
+    background-color: #F2F2F2;
+    opacity: 85%;
+    height: 70vh;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: .5vmin solid #05060f;
+    box-shadow: .4rem .4rem #05060f;
+    overflow: hidden;
+}
+
+.btnFood {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: black;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 orange;
+  }
+  
+  .btnFood:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 black;
+  }
+  
+  .btnFood:active {
+    transform: scale(0.9);
+  }
+
+.card{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    height: 17rem;
+}
+
+.card-button {
+    transform: translate(-50%, 1%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color:  #730202;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    opacity: 1;
+    transition: 0.3s ease-out;
+   }
+
+   .card:hover {
+    border-color: #730202;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+   }
+
+ .foodCol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    height: 60vh;
+ }
+   

@@ -1,0 +1,30 @@
+<div class="containerTicket">
+<div class="p-3 border bg-light txtlarge d-flex justify-content-center mt-2 mb-2"> 
+<h1>RECEIPT</h1>
+</div>
+<div class="row">
+	<div class="col col-md-9 "> Items </div>
+	<div class="col col-md-3 txtlarge"> Price </div>
+</div>
+
+<div class="row mt-3 mb-3 height">
+	<div>
+		<div *ngFor="let product of addProductService.products" class="itemFood d-flex">
+			<div class="col col-md-10 d-flex">
+				<button type="button" class="close btnClose" aria-label="Remove Item" (click)="removeProductsTicket(product.id)">
+					<span aria-hidden="true">&times;</span>
+				</button> {{product.name}}
+			</div>
+			<div class="col col-md-2">
+				{{product.price | currency:'USD'}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col col-md-9 txtlarge d-flex justify-content-end"> TOTAL </div>
+	<div class="col col-md-3 txtlarge"> {{totalPrice()| currency:'USD'}} </div>
+</div>
+<div class="row mt-3"> <app-add-name class="name"></app-add-name>  </div>
+</div>
