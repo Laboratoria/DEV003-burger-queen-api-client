@@ -1,0 +1,56 @@
+<div class="d-flex gap-2 justify-content-between">
+	<h4>RECEIPT</h4>
+	<h4>Date: {{date | date : "short"}}</h4>
+</div>
+
+<div *ngIf="addProductService.products.length">
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col" colspan="2">Items</th>
+				<th scope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let productObject of addProductService.products">
+				<td>{{productObject.product.name}}</td>
+				<td>
+					<div class="d-flex gap-2">
+						<button (click)="[productObject.quantity = productObject.quantity - 1,deleteProduct(),totalPrice()]"
+							class="btn btn-sm btnCounter">
+							<fa-icon [icon]="faMinus"></fa-icon>
+						</button>
+						<input type="text" class="form-control form-control-sm" style="width: 50px;"
+							value="{{productObject.quantity}}" />
+						<button (click)="[productObject.quantity = productObject.quantity + 1, totalPrice()]"
+							class="btn btn-sm btnCounter">
+							<fa-icon [icon]="faPlus"></fa-icon>
+						</button>
+						<button type="button" class="btn btn-sm btnClose" aria-label="Remove Item"
+							(click)="removeProductsTicket(productObject.product.id)">
+							<fa-icon [icon]="faTrash"></fa-icon>
+						</button>
+					</div>
+				</td>
+				<td>
+					{{productObject.product.price * productObject.quantity | currency:'USD'}}
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<th scope="row" class="text-end">TOTAL</th>
+				<td>{{ totalPrice() | currency:'USD'}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<form (ngSubmit)="addnames()" class="d-flex align-items-center gap-2 justify-content-center">
+    <label class="form-label">Order for:</label>
+    <input type="text" class="form-control" style="width:180px;" placeholder="Add name" name="name" [(ngModel)]="name">
+    <button class="btn card-button mt-1 mb-1" (click)="traerPedidos()"> 
+			Send to kitchen
+    </button>
+</form>
+</div>
+<div *ngIf="!addProductService.products.length">
+	No products yet
+</div>

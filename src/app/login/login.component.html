@@ -1,0 +1,40 @@
+<!-- <pre>{{constactForm.value | json}}</pre> -->
+<div class="login-container">
+  <div class="card mx-auto position-relative login-card">
+    <div class="logo position-absolute d-flex align-content-center justify-content-center w-100" style="top:-40px">
+      <img src="assets/logoBQ.png" alt="logo" width="80px">
+    </div>
+    <div class="card-body login-card-body">
+      <form [formGroup]="formUser" (ngSubmit)="createPostos()">
+        <div class="mb-2">
+          <input type="email" placeholder="Email" class="form-control" formControlName="email">
+          <div class="alert alert-danger mt-3" role="alert" [hidden]="email.valid || email.pristine">
+            <span *ngIf="email.errors?.['required']">
+              Email is required
+            </span>
+            <span *ngIf="email.errors?.['email']">
+              Please, insert a valid Email
+            </span>
+          </div>
+        </div>
+        <div class="mb-2">
+          <input type="password" placeholder="Password" class="form-control" id="password" formControlName="password">
+          <div class="alert alert-danger mt-3" role="alert" [hidden]="password.valid || password.pristine">
+            <span *ngIf="password.errors?.['required']">
+              Password is required
+            </span>
+            <span *ngIf="password.errors?.['minlength']">
+              Please, insert 6 or more characters
+            </span>
+          </div>
+        </div>
+        <button type="submit" class="btn card-button w-100"
+          [disabled]="!(formUser.valid && formUser.dirty) || isFormLoading">
+          <fa-icon [icon]="faSpinner" [spin]="true" *ngIf="isFormLoading"></fa-icon>
+          {{isFormLoading ? 'Loading...' : 'Log in'}}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
