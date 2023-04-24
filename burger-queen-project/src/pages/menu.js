@@ -1,9 +1,9 @@
-import { HeaderMenu } from "./components/headerMenu";
-import { NavigationMenu } from "./components/navigationMenu";
-import { BoXBurgerDance } from "./components/boxBurgerDance";
-import { BoXOrder } from "./components/boxOrder";
-import { BoxCategoriesMenuFood } from "./components/boxCategoriesMenuFood";
-import { BoxProcess } from "./components/boxProcess";
+import { HeaderMenu } from "../components/menu/headerMenu";
+import { NavigationMenu } from "../components/menu/navigationMenu";
+import { BoXBurgerDance } from "../components/menu/boxBurgerDance";
+import { BoXOrder } from "../components/menu/boxOrder";
+import { BoxCategoriesMenuFood } from "../components/menu/boxCategoriesMenuFood";
+import { BoxProcess } from "../components/menu/boxProcess";
 
 export default function MenuPage() {
     return (<div>
