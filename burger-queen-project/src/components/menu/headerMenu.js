@@ -1,6 +1,6 @@
 import Image from "next/image";
 import logo from "../../../public/assets/logoBurger.png";
-import styles from "../styles/headerMenu.module.css"
+import styles from "../../styles/headerMenu.module.css"
 
 export function HeaderMenu () {
     return (
