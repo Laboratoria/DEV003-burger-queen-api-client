@@ -6,5 +6,10 @@
     background: black;
   }
   .btnnn{
-    background: var(--button-background);
+    background-color: var(--button-background);
+    font-family: var(--button-font-family);
+    transition: background-color .5s;
+  }
+  .btnnn:hover{
+    background-color:var(--button-background-hover)
   }
