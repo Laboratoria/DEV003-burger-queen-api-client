@@ -1,3 +1,4 @@
+import { Stint_Ultra_Condensed } from "next/font/google";
 import style from "../../styles/all-food.module.css";
 import { useState, useEffect } from "react"
 
@@ -9,16 +10,22 @@ export function AllFood() {
             .then((data) => {
                 setData(data)
             })
-    },[])
+    }, [])
     return (
-        <div>
+        <div className={style.container}>
             {data.map(item => {
                 return (
-            <div className="product-container">
-            <img className={style.product} src={item.image} alt="Productos"/>
-            <p>${item.price}</p>
-            <h3>{item.name}</h3>
-            </div>
+                    <div className={style.content}>
+                        <div className={style.img}>
+                        <img className={style.product} src={item.image} alt="Productos" />
+                        </div>
+                        <p>${item.price}</p>
+                        <h3>{item.name}</h3>
+                        <div className={style.interaction}>
+                            <button>Añadir</button>
+                        </div>
+                    </div>
+
                 )
             })}
         </div>

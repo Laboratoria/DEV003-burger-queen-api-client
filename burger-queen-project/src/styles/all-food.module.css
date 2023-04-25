@@ -1,3 +1,30 @@
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2%;
+        margin-top: 5%;
+        padding: 10px;
+    }
+    
+    .content {
+        flex: 20%;
+        margin:3px auto;
+        padding: 3px;
+    }
+
+    .img {
+        display: flex;
+        justify-content: center;
+    }
+    
     .product {
-        width: 50px;
+        width: 80px;     
+        justify-content: center;
+    }
+    
+    .interaction {
+        display: flex;
+        justify-content: center;
+        padding: 5px;
     }
