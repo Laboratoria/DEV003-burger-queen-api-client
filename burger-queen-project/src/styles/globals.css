@@ -1,20 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
 
 :root {
-  /*Estilos de letras*/ 
-  --font-family : Nunito Sans;
+  /* Estilos de letras */ 
+  --font-family: 'Nunito Sans', sans-serif;
   --font-color :#593B16;
-  /*estilos para botones generales*/
+  /* Estilos para botones generales */
   --button-background: #F2BD1D;
   --button-background-hover: #F28D35;
-  --button-font-family: Nunito Sans;
   --button-font-color: #593B16;
-  /*estilos para boton cancelar*/
+  /* Estilos para boton cancelar */
   --button-cancel-background: #9ABF75;
   --button-cancel-border: #F2BD1D;
-  /*Estilos boxOrder*/
+  /* Estilos boxOrder */
   --background-boxOrder : #FFFFFF; 
   --text-client-color: #000000; 
- 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,12 +25,15 @@
   }
 }
 
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+}
+
 body {
   display: flex;
   justify-content: center;
   margin: 1rem;
   background: #9ABF75;
-}
-html{
-  background-color: #000000;
 }
