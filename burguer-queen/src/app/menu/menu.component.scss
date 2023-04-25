@@ -1,0 +1,197 @@
+/* estilos.css */
+//====================  Fuentes ====================//
+
+/*@font-face {
+  font-family: montserratM;
+  src: url(../fonts/Montserrat-Medium.otf);
+}
+
+@font-face {
+  font-family: montserratL;
+  src: url(../fonts/Montserrat-Light.otf);
+}
+
+@font-face {
+  font-family: caviarD;
+  src: url(../fonts/CaviarDreams_Bold.ttf);
+}
+
+@font-face {
+  font-family: caviar;
+  src: url(../fonts/CaviarDreams.ttf);
+}*/
+
+
+//====================  Estilos de imagenes logo y menú hamburguesa ====================//
+.logo-img {
+  height: 100px;
+}
+.img-menuHamburguesa-container {
+  flex-basis: 10%; /* Ajusta el ancho del div */
+  max-width: 10%; /* Ajusta el ancho máximo del div  */
+}
+.img-menuHamburguesa {
+  height: 100px;
+  transition: transform 0.3s ease-in-out; /* Transición  para el efecto de hundimiento */
+}
+
+.img-menuHamburguesa:hover {
+  transform: scale(0.9); /* Escala la imagen al 90% del tamaño original */
+}
+
+.img-menuHamburguesa:active {
+  transform: scale(0.8); /* Escala la imagen al 80% del tamaño original al hacer clic */
+}
+
+
+.menuDesplegable {
+  position: absolute;
+  top: 90px;
+  right: 20px;
+  background-color: white;
+  /* Estilos para el efecto 3D */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transform: perspective(800px) rotateX(-10deg);
+  transform-origin: top right;
+}
+
+.menuDesplegable ul {
+  list-style-type: none;
+}
+.menuDesplegable ul li:hover {
+  background-color: #FDE293;
+  opacity: 10;
+  border-radius: 25px;
+  font-family: caviarD;
+
+}
+//====================  Estilos de los dos contenedores ====================//
+
+.row-estilo2 {
+ height: 550px;
+}
+.texto {
+  font-family: caviarD;
+}
+.cliente {
+  background: #FDE293;
+  opacity: 10;
+  border-radius: 25px;
+  width: 80%;
+}
+.cliente::placeholder {
+  text-align: center;
+  font-family: montserratL;
+}
+
+.navbar-expand-lg {
+  background-color: #EA8D6F;
+  border-radius: 25px;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-expand-lg li {
+  width: 100px;
+  font-family: caviarD;
+}
+
+.navbar-expand-lg .navbar-nav > .nav-item > .nav-link:hover {
+  background-color: #FDE293;
+  opacity: 10;
+  border-radius: 25px;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra a la tarjeta */
+  transition: box-shadow 0.3s ease-in-out; /* Agrega una transición suave a la sombra */
+}
+
+.card:hover {
+  transform: rotateY(10deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Cambia la sombra al hacer hover */
+}
+
+.card-img {
+  background-color: #FDE293;
+  margin-top: 10%;
+  border-radius: 10px;
+  height: 130px;
+  width: 150px;
+}
+
+.card-title {
+  margin-top: 20px;
+  font-family: montserratM;
+}
+.card-price {
+  font-family: montserratL;
+}
+.btn {
+  margin-left: 300px;
+  background-color: #EA8D6F;
+  border-radius: 25px;
+}
+
+// Segundo contenedor
+.col-segundaC {
+  background-color: #fde293;
+  opacity: 9;
+  border-radius: 25px;
+}
+.col-orden {
+  margin-top: 20px;
+  margin-left: 15%;
+    background-color: #EA8D6F;
+  border-radius: 25px;
+  height: 40px;
+  width: 70%;
+  font-family: caviarD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col-aparecenLasO {
+  height: 430px;
+  display: flex;
+  align-items: center;
+  background-color: #fde293;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Total {
+  font-family: caviarD;
+}
+.Total-input {
+  width: 30%;
+}
+
+.btn-crearPedido {
+  margin: 10px;
+  font-family: caviarD;
+  background-color: #EA8D6F;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #000;
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* Transición suave del efecto */
+  border: none;
+  outline: none;
+}
+
+.btn-crearPedido:hover {
+  transform: scale(0.95); /* Reducción de escala al hacer hover */
+}
+
+.btn-crearPedido:focus {
+  outline: none;
+}
+

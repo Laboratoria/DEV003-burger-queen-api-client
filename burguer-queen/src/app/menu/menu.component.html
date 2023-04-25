@@ -1,0 +1,99 @@
+<!--====================  Imagenes logo y menú hamburguesa ==================== -->
+<div class="row row-estilo1 m-2 justify-content-start align-items-center">
+  <div class="col">
+    <img class="logo-img" src="../assets/images/logoBQ-horizontal.png">
+  </div>
+  <div class="col text-center">
+    <!-- Espacio en el medio -->
+  </div>
+  <div class="col m-8 img-menuHamburguesa-container">
+    <img class="img-menuHamburguesa" src="../assets/images/m-hamburg.png" (click)="mostrarMenu()">
+    <!-- Menú desplegable -->
+    <div class="menuDesplegable" *ngIf="mostrarMenuDesplegable">
+      <ul>
+        <li (click)="irAPedidos()">Pedidos</li>
+        <li (click)="irAMenu()">Menú</li>
+        <li (click)="cerrarSesion()">Cerrar sesión</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--====================  Aquí los dos contenedores ==================== -->
+<div class="row row-estilo2 m-2">
+  <div class="col-md-6 col-primerContainer">
+    <!-- Contenido de la primera columna -->
+    <div class="col m-2">
+      <div class="col mx-auto d-block text-center">
+        <label for="name" class="texto" style="margin-right: 10px;">Cliente: </label>
+        <input class="cliente" type="text" placeholder="Escribe el nombre del cliente" name="name" required />
+      </div>
+      <!-- ==================== navbar menú ==================== -->
+      <div class="col col-navbar">
+        <nav class="navbar navbar-expand-lg ">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/todo" (click)="showCard('todo')">Todo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/desayuno" (click)="showCard('desayuno')">Desayuno</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/comidas" (click)="showCard('comidas')">Comidas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/bebidas" (click)="showCard('bebidas')">Bebidas</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="container-card mt-4 " *ngIf="cardVisible">
+          <div class="row">
+            <div class="col col-card">
+              <div class="card">
+                <div class="row">
+                  <div class="col-md-4">
+                    <!-- Aquí se muestra la imagen en la tarjeta -->
+                    <img src="{{ cardImage }}" alt="{{ cardTitle }}" class="card-img">
+                  </div>
+                  <div class="col-md-8 ">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ cardTitle }}</h5>
+                      <p class="card-price">Precio: {{ cardPrice }}</p>
+                      <button class="btn" value="+">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-1">
+    <!-- Espacio en el medio -->
+  </div>
+  <!-- Contenido de la segunda columna -->
+  <div class="col-md-5 col-segundaC">
+    <div class="row row-contenedores">
+      <!-- Primer contenedor -->
+      <div class=" col-orden ">
+        Lista de ordenes
+      </div>
+      <!-- Segundo contenedor -->
+      <div class="col-aparecenLasO">
+      </div>
+
+      <!-- Tercer contenedor -->
+      <div class="col mx-auto d-block text-center">
+        <div class="d-flex align-items-center justify-content-center">
+          <label for="name" class="Total">Total: </label>
+          <input class="Total-input form-control" type="text" />
+          <button class="btn-crearPedido">Crear pedido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

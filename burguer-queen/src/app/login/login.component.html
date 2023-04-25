@@ -1,0 +1,49 @@
+<div class="container mt-5" style="padding-top: 20px;">
+  <div class="row">
+    <div class="col-md-6" style="margin-bottom: 20px;">
+      <img src="../assets/images/login-bq.png" alt="Login Image" class="img-fluid">
+    </div>
+
+    <div class="col-md-6 col-lg-6" style="margin-top: 80px;">
+      <!-- Cómo colocarlo sin necesidad de definir parámetro -->
+      <form [formGroup]="formLogin" (ngSubmit)="onClickLogin(formLogin.value)"
+        style="background-color: #EA8D6F; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.3);" class="p-3">
+
+        <img src="../assets/images/bienvenido.png" alt="Welcome Image" class="img-fluid mx-auto d-block">
+
+        <div class="alert alert-danger mt-3 p-1" *ngIf="errorStatus">
+          <p>{{ errorMsg }}</p>
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" formControlName="email" id="email" name="email" aria-describedby="emailHelp" placeholder="Example@example.com" style="width: 100%; margin-left: 5px;">
+
+          <div class="alert alert-danger mt-3 p-1" [hidden]="email.valid">
+            El email debe ser válido.
+          </div>
+        </div>
+
+
+        <div class="form-group mt-3">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input type="password" class="form-control" formControlName="password" id="password" name="password" placeholder="********" style="width: 100%; margin-left: 5px;">
+
+          <div class="alert alert-danger mt-3 p-1" [hidden]="password.valid || password.pristine">
+            El campo debe estar lleno.
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-warning mx-auto d-block mt-3" [disabled]="formLogin.invalid" style="background-color: #FDE293;">
+          INICIAR SESIÓN
+        </button>
+      </form>
+    </div>
+    <!-- {{ email.value }}
+    {{ email.errors | json }} -->
+    <!-- {{ formLogin.value | json }} -->
+    <!-- {{ formLogin.get('email')?.value }} método get accedo a los objetos de manera individual -->
+
+  </div>
+</div>
+
