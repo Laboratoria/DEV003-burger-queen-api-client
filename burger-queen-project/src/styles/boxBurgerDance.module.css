@@ -1,0 +1,13 @@
+/*Component box of burger dancing*/
+.burgerBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 5%;
+    width: 700px;
+    height: 400px;
+}
+.danceBurger{
+    margin-left: 20%;
+}
