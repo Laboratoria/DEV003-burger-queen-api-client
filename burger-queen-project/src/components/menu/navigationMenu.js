@@ -5,7 +5,7 @@ export function NavigationMenu () {
     return (
       <div className="NavigationMenu">
         <nav className="NavigationMenu-nav">
-               <button className="NavigationMenu-nav-btnBreakfast"onClick={()=>router.push('/desayuno')}>Desayuno</button> <button className="Navigation-nav-btnFood" onClick={()=>router.push('/food')}>Comida</button> 
+               <button className="NavigationMenu-nav-btnBreakfast"onClick={()=>router.push('/desayuno')}>Desayuno</button> <button className="Navigation-nav-btnFood" onClick={()=>router.push('/food')}>Almuerzo</button> 
             </nav>
             </div>
     )
