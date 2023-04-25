@@ -1,10 +1,10 @@
 /*Component box order*/
 .burgerBox {
     justify-content: left;
-    margin-left: 5%;
+    margin-left: 0;
     margin-right: 5%;
     background: rgba(197, 218, 176, 0.5);
-    width: 890px;
+    width: 700px;
     height: 400px;
 }
 
