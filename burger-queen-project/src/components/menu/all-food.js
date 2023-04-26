@@ -22,7 +22,7 @@ export function AllFood() {
                         <p>${item.price}</p>
                         <h3>{item.name}</h3>
                         <div className={style.interaction}>
-                            <button>Añadir</button>
+                            <button className={style.btnAdd}>Añadir</button>
                         </div>
                     </div>
 
