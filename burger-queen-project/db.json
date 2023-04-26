@@ -99,38 +99,6 @@
       },
       {
         "id": 5,
-        "name": "Agua 500ml",
-        "price": 500,
-        "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/water.png",
-        "type": "Almuerzo",
-        "dateEntry": "2022-03-05 15:14:10"
-      },
-      {
-        "id": 6,
-        "name": "Agua 750ml",
-        "price": 700,
-        "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/water.png",
-        "type": "Almuerzo",
-        "dateEntry": "2022-03-05 12:14:10"
-      },
-      {
-        "id": 7,
-        "name": "Bebida/gaseosa 500ml",
-        "price": 500,
-        "image": "https://i.postimg.cc/TYvpkpFy/soda.png",
-        "type": "Almuerzo",
-        "dateEntry": "2022-03-05 12:14:10"
-      },
-      {
-        "id": 8,
-        "name": "Bebida/gaseosa 750ml",
-        "price": 1000,
-        "image": "https://i.postimg.cc/TYvpkpFy/soda.png",
-        "type": "Almuerzo",
-        "dateEntry": "2022-03-05 12:14:10"
-      },
-      {
-        "id": 9,
         "name": "Hamburguesa simple",
         "price": 1000,
         "image": "https://i.postimg.cc/B6dC6Hp5/hamburger.png",
@@ -138,7 +106,7 @@
         "dateEntry": "2022-03-07 14:14:10"
       },
       {
-        "id": 10,
+        "id": 6,
         "name": "Hamburguesa doble",
         "price": 1500,
         "image": "https://i.postimg.cc/G2cCfTGQ/special-burger.png",
@@ -146,7 +114,7 @@
         "dateEntry": "2022-03-07 14:14:10"
       },
       {
-        "id": 11,
+        "id": 7,
         "name": "Papas fritas",
         "price": 500,
         "image": "https://i.postimg.cc/6ptP9f2d/papitas-removebg-preview.png",
@@ -154,12 +122,44 @@
         "dateEntry": "2022-03-07 14:14:10"
       },
       {
-        "id": 12,
+        "id": 8,
         "name": "Aros de cebolla",
         "price": 500,
         "image": "https://i.postimg.cc/J01W9CLk/onion-rings.png",
         "type": "Almuerzo",
         "dateEntry": "2022-05-07 10:14:10"
+      },
+      {
+        "id": 9,
+        "name": "Agua 500ml",
+        "price": 500,
+        "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/water.png",
+        "type": "Almuerzo",
+        "dateEntry": "2022-03-05 15:14:10"
+      },
+      {
+        "id": 12,
+        "name": "Agua 750ml",
+        "price": 700,
+        "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/water.png",
+        "type": "Almuerzo",
+        "dateEntry": "2022-03-05 12:14:10"
+      },
+      {
+        "id": 11,
+        "name": "Bebida/gaseosa 500ml",
+        "price": 500,
+        "image": "https://i.postimg.cc/TYvpkpFy/soda.png",
+        "type": "Almuerzo",
+        "dateEntry": "2022-03-05 12:14:10"
+      },
+      {
+        "id": 12,
+        "name": "Bebida/gaseosa 750ml",
+        "price": 1000,
+        "image": "https://i.postimg.cc/TYvpkpFy/soda.png",
+        "type": "Almuerzo",
+        "dateEntry": "2022-03-05 12:14:10"
       }
     ],
     "users": [
