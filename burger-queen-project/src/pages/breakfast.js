@@ -9,7 +9,7 @@ export default function MenuFoodPage() {
     return (<div>
         <HeaderMenu />
         <NavigationMenu />
-        <AllFood title="Almuerzo"/>
+        <AllFood title="Desayuno"/>
         <BoXOrder />
         <BoxProcess />
     </div>

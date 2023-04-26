@@ -2,7 +2,8 @@ import { Stint_Ultra_Condensed } from "next/font/google";
 import style from "../../styles/all-food.module.css";
 import { useState, useEffect } from "react"
 
-export function AllFood() {
+export function AllFood(props) {
+    const categorySelect = props.title;
     const [data, setData] = useState([]);
     useEffect(() => {
         fetch('http://localhost:3001/products')
@@ -11,13 +12,18 @@ export function AllFood() {
                 setData(data)
             })
     }, [])
+    const filterFood = (data, category) => { 
+        return data.filter((element)=> element.type.includes(category));
+    }
+    
+    const newDataFilter = filterFood(data, categorySelect);
     return (
         <div className={style.container}>
-            {data.map(item => {
+            {newDataFilter.map(item => {
                 return (
                     <div className={style.content}>
                         <div className={style.img}>
-                        <img className={style.product} src={item.image} alt="Productos" />
+                            <img className={style.product} src={item.image} alt="Productos" />
                         </div>
                         <p>${item.price}</p>
                         <h3>{item.name}</h3>
