@@ -1,10 +1,11 @@
 import { useRouter } from 'next/router';
-
+import styles from "../../styles/boxOrder.module.css";
 export function BoxProcess () {
     const router = useRouter();
     return (
-        <div className="Process-box">
-                <button className="CancelORder" onClick={()=>router.push('/menu')}>CANCELAR</button> <button className="SendOrder">ENVIAR</button> 
+        <div className={styles.processbox}>
+                <button className={styles.CancelORder} onClick={()=>router.push('/menu')}>CANCELAR</button>
+                <button className={styles.SendOrder}>ENVIAR</button> 
             </div>
         
     )

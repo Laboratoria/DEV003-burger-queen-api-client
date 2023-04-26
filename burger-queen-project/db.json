@@ -93,7 +93,7 @@
         "id": 4,
         "name": "Jugo de frutas natural",
         "price": 700,
-        "image": "https://i.postimg.cc/d132nL7k/juice.png",
+        "image": "https://i.postimg.cc/Z5n9DsZp/juice-Small.png",
         "type": "Desayuno",
         "dateEntry": "2022-04-05 16:14:10"
       },
@@ -117,7 +117,7 @@
         "id": 7,
         "name": "Papas fritas",
         "price": 500,
-        "image": "https://i.postimg.cc/6ptP9f2d/papitas-removebg-preview.png",
+        "image": "https://i.postimg.cc/ncv9D929/fries.png",
         "type": "Almuerzo",
         "dateEntry": "2022-03-07 14:14:10"
       },

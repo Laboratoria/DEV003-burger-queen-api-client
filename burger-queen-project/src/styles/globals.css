@@ -7,7 +7,7 @@
   /* Estilos para botones generales */
   --button-background: #F2BD1D;
   --button-background-hover: #F28D35;
-  --button-font-color: #593B16;
+  /*--button-font-color: #593B16;*/
   /* Estilos para boton cancelar */
   --button-cancel-background: #9ABF75;
   --button-cancel-border: #F2BD1D;
@@ -36,4 +36,5 @@ body {
   justify-content: center;
   margin: 1rem;
   background: #9ABF75;
+  border-radius: 50px;
 }
