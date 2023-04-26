@@ -24,7 +24,7 @@
 .btnTopics,
 .btnDrinks {
     background-color: var(--button-background);
-    font-family: var(--button-font-family);
+    font-family: var(--font-family);
     transition: background-color .5s;
     width: 430px;
     height: 50px;
@@ -33,7 +33,7 @@
     font-weight: 700;
     font-size: 32px;
     line-height: 49px;
-    color: #593B16;
+    color: var( --font-color);
 }
 
 .btnBurgers:hover,
