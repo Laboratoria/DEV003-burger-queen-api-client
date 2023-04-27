@@ -19,7 +19,7 @@
     }
     
     .product {
-        width: 80px;     
+        /* width: 80px;      */
         justify-content: center;
     }
     
@@ -27,4 +27,14 @@
         display: flex;
         justify-content: center;
         padding: 5px;
+    }
+    .btnAdd{
+    background-color: var(--button-background);
+    font-family: var(--font-family);
+    color: var( --font-color);
+    font-size: 28px;
+    font-weight: 700;
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
     }
