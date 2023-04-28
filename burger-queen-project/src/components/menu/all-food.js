@@ -31,12 +31,13 @@ export function AllFood(props) {
                         <div className={style.img}>
                             <img className={style.product} src={item.image} alt="Productos" />
                         </div>
-                        <p>${item.price}</p>
-                        <h3>{item.name}</h3>
+                        <p className={style.p}>${item.price}</p>
+                        <h3 className={style.h3}>{item.name}</h3>
                         <div className={style.interaction}>
-                            <button className={style.btnAdd} onClick={()=> {setCount(item.counter+1), setProduct([...product, item.name]), setPrice(price+item.price)}}>Añadir</button>
-                            <button className={style.btnAdd} onClick={()=> setCount(item.counter-1)}>quitar</button>
-                            <p>{item.counter}</p>
+                            <button className={style.btnAdd} onClick={()=> {setCount(item.counter+1), setProduct([...product, item.name]), setPrice(price+item.price)}}>+</button>
+                            <div className={style.counter}><p>{item.counter}</p></div>
+                            <button className={style.btnAdd} onClick={()=> setCount(item.counter-1)}>-</button>
+                            
                         </div>
                         
                     </div>
