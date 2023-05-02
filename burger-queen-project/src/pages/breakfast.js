@@ -7,10 +7,8 @@ import { AllFood } from "@/components/menu/all-food";
 
 export default function MenuFoodPage() {
     return (<div>
-        <HeaderMenu />
         <NavigationMenu />
         <AllFood title="Desayuno"/>
-        <BoXOrder />
         <BoxProcess />
     </div>
     )
