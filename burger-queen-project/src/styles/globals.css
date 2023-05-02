@@ -33,6 +33,7 @@ html {
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 1rem;
   background: #9ABF75;
