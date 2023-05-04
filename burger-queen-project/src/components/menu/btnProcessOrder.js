@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import styles from "../../styles/boxOrder.module.css";
-export function BoxProcess () {
+
+export function BtnProcessOrder () {
     const router = useRouter();
     return (
         <div className={styles.processbox}>

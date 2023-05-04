@@ -1,10 +1,11 @@
 import { Stint_Ultra_Condensed } from "next/font/google";
-import style from "../../styles/all-food.module.css";
+import style from "../../styles/viewAllFood.module.css";
 import { useState, useEffect } from "react";
 import { CounterButton } from "./counterButton";
 import { BoxOrder } from "./boxOrder";
-export function AllFood(props) {
-    const categorySelect = props.title;
+import { BtnProcessOrder } from "./btnProcessOrder";
+
+export function ViewAllFood({ title }) {
     const [data, setData] = useState([]);
     // const [count, setCount] = useState(0)
     // const [product, setProduct] = useState([]);
@@ -23,7 +24,7 @@ export function AllFood(props) {
         }).map(obj => {return { ...obj, counter: 0}})
     }
 
-    const newDataFilter = filterFood(data, categorySelect);
+    const newDataFilter = filterFood(data, title);
     // console.log(newDataFilter);
     return (
         <div className={style.container}>
@@ -46,6 +47,7 @@ export function AllFood(props) {
                 )
             })}
             <BoxOrder />
+            <BtnProcessOrder />
         </div>
 
     )
