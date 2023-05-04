@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import style from "../../styles/all-food.module.css";
+import style from "../../styles/viewAllFood.module.css";
 
 export const CounterButton = (props) => {
     const { id } = props;

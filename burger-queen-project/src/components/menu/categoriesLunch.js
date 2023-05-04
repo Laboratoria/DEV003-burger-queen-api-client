@@ -1,5 +1,5 @@
 import styles from "../../styles/boxCategoriesMenuFood.module.css";
-
+//Por el momento no se utiliza por cantidad de pproductos minima
 export function BoxCategoriesMenuFood () {
     return (
         <div className={styles.BoxCategory}>
