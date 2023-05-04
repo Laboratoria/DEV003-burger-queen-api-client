@@ -7,7 +7,6 @@ import { BoxProcess } from "../components/menu/boxProcess";
 
 export default function MenuPage() {
     return (<div>
-        <HeaderMenu />
         <NavigationMenu />
         <BoXBurgerDance />
         <BoXOrder />

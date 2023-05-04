@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import style from "../../styles/all-food.module.css";
 
-export const CounterButton = () => {
-let [count, setCount] = useState(0);
+export const CounterButton = (props) => {
+    const { id } = props;
+    useEffect(() =>{
+        console.log(id);
+    })
+    
+    let [count, setCount] = useState(0);
 
 const counterAdd = () => { setCount (c => c + 1)};
 const counterLess = () => { count <= 0 ? count = 0: setCount (c => c - 1) };
