@@ -42,4 +42,13 @@ export class ApiBQService {
     let orderArrayUrl = this.url + 'orders'
     return this.http.get<any>(orderArrayUrl, {'headers': productHeader})
   }
+
+    // Fx para editar estado de orden
+    patchOrder(id:number, update:object):Observable<any>{
+      let token = sessionStorage.getItem('token')
+      let productHeader = new HttpHeaders().set('Authorization', 'Bearer ' + token)
+      let idToString = id.toString()
+      let orderUrl = this.url + 'orders/' + idToString
+      return this.http.patch<any>(orderUrl, update, {'headers': productHeader})
+    }
 }
