@@ -4,6 +4,7 @@ import { ResponseI } from '../interfaces/response.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';//un observable es un flujo de eventos o datos
 
+
 @Injectable({
   providedIn: 'root'
 })

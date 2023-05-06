@@ -19,3 +19,8 @@
 .card div:nth-of-type(3) {flex-grow: 2;}
 
 .w { background-color: white;}
+
+.cardFlex {
+  display: flex;
+  flex-wrap: wrap;
+}

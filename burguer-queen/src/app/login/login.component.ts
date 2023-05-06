@@ -31,7 +31,8 @@ export class LoginComponent {
       next: (data:any) =>{
       let dataResponse:any = data;
       sessionStorage.setItem("token", dataResponse.accessToken);
-      console.log(dataResponse.token);
+      sessionStorage.setItem("user", dataResponse.user.role);
+      console.log(data);
       this.showSuccess();
 
       if(dataResponse.user.role === "waiter"){

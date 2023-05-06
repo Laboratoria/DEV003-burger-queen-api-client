@@ -1,43 +1,46 @@
 <app-header [componentTitle]='title'></app-header>
 <div class="container mt-4">
-  <div class="row gy-3">
+  <div class="row gy-3 cardFlex">
     <div class="col-md-4" *ngFor="let order of ordersArray">
-      <section class="rounded p-1 card">
-        <div class=" row rounded mx-1 my-2 px-3 py-1 w">
-          Client: {{order.client}}
-        </div>
+      <ng-container>
+        <!-- <ng-container [ngStyle]="{'display':cheffStatus(order.status) ? 'block' : 'none' }"> -->
+        <section  class="rounded p-1 card">
+          <div class=" row rounded mx-1 my-2 px-3 py-1 w">
+            Client: {{order.client}}
+          </div>
 
-        <div class="row rounded m-1 my-2 px-2 w">
-          <div class="col-7">
-            <p>Products</p>
-            <div *ngFor="let orderProducts of order.products">
-              {{orderProducts.product.name}}
+          <div class="row rounded m-1 my-2 px-2 w">
+            <div class="col-7">
+              <p>Products</p>
+              <div *ngFor="let orderProducts of order.products">
+                {{orderProducts.product.name}}
+              </div>
+            </div>
+            <div class="col-5">
+              <p>Quantity</p>
+              <div *ngFor="let orderProducts of order.products">
+                {{orderProducts.qty}}
+              </div>
             </div>
           </div>
-          <div class="col-5">
-            <p>Quantity</p>
-            <div *ngFor="let orderProducts of order.products">
-              {{orderProducts.qty}}
+
+          <div class="row" class="row rounded m-1 my-2 px-2 w">
+            <div class="col">
+              <label for="status">Status:</label>
+              <select #selecStatus [(ngModel)]="order.status" (ngModelChange)="updateOrder(order.id, selecStatus.value)" name="status" id="status">
+                <option [selected]="order.status === 'pending'">pending</option>
+                <option [selected]="order.status === 'canceled'">canceled</option>
+                <option [selected]="order.status === 'delivering'">delivering</option>
+                <option [selected]="order.status === 'delivered'">delivered</option>
+              </select>
+            </div>
+            <div class="col">
+              <p>Time</p>
+              {{order.dataEntry | date: 'shortTime'}}
             </div>
           </div>
-        </div>
-
-        <div class="row" class="row rounded m-1 my-2 px-2 w">
-          <div class="col">
-            <label for="status">Status:</label>
-            <select #selecStatus [(ngModel)]="order.status" (ngModelChange)="updateOrder(order.id, selecStatus.value)" name="status" id="status">
-              <option [selected]="order.status === 'pending'">pending</option>
-              <option [selected]="order.status === 'canceled'">canceled</option>
-              <option [selected]="order.status === 'delivering'">delivering</option>
-              <option [selected]="order.status === 'delivered'">delivered</option>
-            </select>
-          </div>
-          <div class="col">
-            <p>Time</p>
-            {{order.dataEntry | date: 'shortTime'}}
-          </div>
-        </div>
-      </section>
+        </section>
+      </ng-container>
     </div>
   </div>
 </div>
