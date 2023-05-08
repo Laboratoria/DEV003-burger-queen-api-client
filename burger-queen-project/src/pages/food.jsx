@@ -6,7 +6,7 @@ import { ViewAllFood } from "../components/menu/viewAllFood";
 export default function MenuFoodPage() {
     return (<div>
         <NavigationMenu />
-        <ViewAllFood title="Almuerzo"/>
+        <ViewAllFood type= "Almuerzo" />
     </div>
     )
 }
