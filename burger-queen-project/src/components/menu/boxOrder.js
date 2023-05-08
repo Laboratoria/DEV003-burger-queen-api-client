@@ -1,7 +1,7 @@
 import styles from "../../styles/boxOrder.module.css";
 import { useState } from "react";
 
-export function BoxOrder({ value }) {
+export function BoxOrder(props) {
     // const [order, setOrder] = useState([{
     //     products: [],
     //     total: 0,
@@ -19,8 +19,7 @@ export function BoxOrder({ value }) {
         <div className={styles.burgerBox}>
             <label className={styles.customer}>Cliente: <input type="text" className={styles.customerName}></input></label>
             <div>
-                <p >Tabla de ordenes</p>
-                <p> {value} </p>
+            <p>{props.counter}</p>
             </div>
         </div>
 
