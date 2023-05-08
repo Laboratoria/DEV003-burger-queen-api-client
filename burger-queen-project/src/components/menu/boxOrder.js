@@ -3,8 +3,9 @@ import { ContextOrder } from "./contextOrder";
 import { useContext } from "react";
 
 export function BoxOrder() {
-    const [order] = useContext(ContextOrder);
-    console.log(order)
+    const [order, setOrder] = useContext(ContextOrder);
+    // console.log(order)
+    // console.log(setOrder)
     return (
         <div className={styles.burgerBox}>
             <label className={styles.customer}>Cliente: <input type="text" className={styles.customerName}></input></label>
@@ -18,12 +19,12 @@ export function BoxOrder() {
                 </thead>
                 <tbody >
                     {order.map((item, index) => {
-                        console.log(item[index].name)
+                        console.log(item.name)
                         return (
                             <tr key={index}>
-                                <td>{item[index].name}</td>
-                                <td>{item[index].counter}</td>
-                                <td>$ {item[index].price}</td>
+                                <td>{item.name}</td>
+                                <td>{item.counter}</td>
+                                <td>$ {item.price}</td>
                             </tr>
                         )
                     })}
