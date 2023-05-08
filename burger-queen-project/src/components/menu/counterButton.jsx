@@ -5,6 +5,7 @@ import { ContextOrder } from "./contextOrder";
 
 
 export const CounterButton = (props /*setValue, valsue, counter, data, addItem*/ ) => {
+    // console.log(props)
     let [order, setOrder] = useContext(ContextOrder);
     // const { id } = props;
     // useEffect(() =>{
@@ -41,7 +42,9 @@ export const CounterButton = (props /*setValue, valsue, counter, data, addItem*/
             price: props.price,
             counter: 1,
         }]
-        setOrder(order.concat([takeOrder]))
+
+        console.log(order.concat(takeOrder))
+        setOrder(takeOrder)
        
     }
     return (
