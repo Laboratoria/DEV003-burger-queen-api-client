@@ -7,6 +7,7 @@ import { BtnProcessOrder } from "./btnProcessOrder";
 
 export function ViewAllFood({ title }) {
     const [data, setData] = useState([]);
+    let [dataFilter, setDataFilter] = useState(0);
     // const [count, setCount] = useState(0)
     // const [product, setProduct] = useState([]);
     // const [price, setPrice]= useState(0);
@@ -18,14 +19,27 @@ export function ViewAllFood({ title }) {
                 setData(data)
             })
     }, [])
-    const filterFood = (data, category) => { 
-        return data.filter((element)=> { 
+    const filterFood = (data, category) => {
+        return data.filter((element) => {
             return element.type.includes(category);
-        }).map(obj => {return { ...obj, counter: 0}})
+        }).map(obj => { return { ...obj, counter: 0 } })
     }
 
     const newDataFilter = filterFood(data, title);
-    // console.log(newDataFilter);
+    // dataFilter = () => {setDataFilter(newDataFilter)};
+    // setDataFilter({dataFilter: {newDataFilter}});
+    // const addItem = (item) => {
+    //     const equalId = newDataFilter.find(element => element.id === item.id);
+    //     const counterProduct ={...item, counter:1};
+    //     if(!equalId){
+    //         setDataFilter((prevState) => [
+    //             ...prevState,
+    //             counterProduct
+    //         ]);
+    //     }
+    console.log(dataFilter);
+    // }
+
     return (
         <div className={style.container}>
             {newDataFilter.map((item) => {
@@ -37,11 +51,13 @@ export function ViewAllFood({ title }) {
                         <p className={style.p}>${item.price}</p>
                         <h3 className={style.h3}>{item.name}</h3>
                         <div className={style.interaction}>
-                            < CounterButton id = {item.id} />
+                            <button onClick={() => {if(item.find(element => element.id === item.id)){setDataFilter(dataFilter+1); console.log(dataFilter)}}}>+</button>
+                            <p>No. {dataFilter}</p>
+                            < CounterButton id={item.id} />
                             {/* <button className={style.btnAdd} onClick={()=> {newDataFilter.indexOf(item) === index ? setCount(c => c + 1):setCount(c => c + 0), setProduct([...product, item.name]), setPrice(price+item.price)}}>+</button>                            
                             */}
                         </div>
-                        
+
                     </div>
 
                 )
