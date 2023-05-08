@@ -1,19 +1,14 @@
 import { Stint_Ultra_Condensed } from "next/font/google";
 import style from "../../styles/viewAllFood.module.css";
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, useEffect} from "react";
 // import { CounterButton } from "./counterButton";
 import { BoxOrder } from "./boxOrder";
 import { BtnProcessOrder } from "./btnProcessOrder";
 import { CounterButton } from "./counterButton";
-import { ContextOrder } from "./contextOrder"
-
 
 export function ViewAllFood({ type }) {
     const [data, setData] = useState([]);
-    let [dataFilter, setDataFilter] = useState(0);
-    const [order] = useContext(ContextOrder);
-    console.log(order)
-    
+    let [dataFilter, setDataFilter] = useState(0);  
     // const [count, setCount] = useState(0)
     // const [product, setProduct] = useState([]);
     // const [price, setPrice]= useState(0);
@@ -81,19 +76,7 @@ export function ViewAllFood({ type }) {
 
                 )
             })}
-            {
-            order.map(item => {
-                return (
-                  <div>
-                    <BoxOrder
-                    name={item.name}
-                    price={item.price}
-                    counter={item.counter}
-                    />
-                  </div>
-                )
-            })
-        }
+            <BoxOrder />
         {/* <MyContext.Provider value={{obj, setObj}}>
             <BoxOrder value = {obj} />
             </MyContext.Provider> */}
