@@ -3,13 +3,25 @@ import style from "../../styles/viewAllFood.module.css";
 import { useContext } from "react";
 import { ContextOrder } from "./contextOrder";
 
-
-export function BoxOrder() {
+export function BoxOrder({ name, price }) {
     const [order, setOrder] = useContext(ContextOrder);
-    // console.log(order)
-    // console.log(setOrder)
-    let addTotal = order.reduce((previous, current) => previous + current.price, 0);
-    // setOrder(order.concat(addTotal))
+    const modifyItems = (action, itemId) => {
+        const itemInOrder = order.findIndex((item, index) => index === itemId);
+        if (itemInOrder !== -1) {
+            const updatedOrder = [...order];
+            // console.log(updatedOrder);
+            const updatedItem = { ...updatedOrder[itemInOrder] };
+            // console.log(updatedItem)
+            updatedItem.counter += action;
+            if (updatedItem.counter) {
+                updatedItem.price;
+                updatedOrder[itemInOrder] = updatedItem;
+            } 
+            setOrder(updatedOrder);
+        } 
+    };
+
+    const addTotal = order.reduce((previous, current) => previous + (current.price * current.counter), 0);
 
     return (
         <div className={styles.burgerBox}>
@@ -26,20 +38,22 @@ export function BoxOrder() {
                 </thead>
                 <tbody >
                     {order.map((item, index) => {
-                        console.log(item.name)
+                        // console.log(item.name)
+                        const itemPrice = item.price * item.counter;
                         return (
                             <tr key={index}>
                                 <td>{item.name}</td>
                                 <td>
-                                    <button className={style.btnAdd} onClick={() => { /*falta funcion*/ }}>-</button>
+                                    {/* <button className={style.btnAdd} onClick={() => modifyItems(-1, index)}>-</button> */}
+                                    <button className={style.btnAdd} onClick={() => item.counter > 1 ? modifyItems(-1, index) : null}>-</button>
                                 </td>
                                 <td>
                                     <div className={style.counter}><p>{item.counter}</p></div>
                                 </td>
                                 <td>
-                                    <button className={style.btnAdd} onClick={() => { /*falta funcion*/ }}>+</button>
+                                    <button className={style.btnAdd} onClick={() => modifyItems(1, index)}>+</button>
                                 </td>
-                                <td>$ {item.price}</td>
+                                <td>$ {itemPrice}</td>
                             </tr>
                         )
                     })}
@@ -48,8 +62,7 @@ export function BoxOrder() {
                     </tr>
                 </tbody>
             </table>
-
         </div>
-
     )
 }
+

@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import style from "../../styles/viewAllFood.module.css";
 import { ContextOrder } from "./contextOrder";
 
 export const HandlerOrder = ({ id, img, name, price }) => {
+    const [disableButton, setDisableButton] = useState(false)
     let [order, setOrder] = useContext(ContextOrder);
     const addItem = () => {
+        setDisableButton(true)
         const takeOrder = {
             name,
             id,
@@ -12,17 +14,7 @@ export const HandlerOrder = ({ id, img, name, price }) => {
             counter: 1,
         }
 
-        const indexOfitemExistInOrder = order.findIndex((item) => item.id === id)
-        if (indexOfitemExistInOrder !== -1) {
-            order[indexOfitemExistInOrder] = {
-                ...takeOrder,
-                counter: order[indexOfitemExistInOrder].counter + 1,
-                price: order[indexOfitemExistInOrder].price + takeOrder.price
-            };
-            setOrder([...order]);
-        } else {
-            setOrder(order.concat(takeOrder))
-        }
+        setOrder(order.concat(takeOrder))
     }
     return (
         <div>
@@ -31,7 +23,7 @@ export const HandlerOrder = ({ id, img, name, price }) => {
             </div>
             <p className={style.p}>${price}</p>
             <h3 className={style.h3}>{name}</h3>
-            <button className={style.btnAdd} onClick={addItem}>Agregar</button>
+            <button className={style.btnAdd} onClick={addItem} disabled={disableButton}>Agregar</button>
         </div>
 
     )
