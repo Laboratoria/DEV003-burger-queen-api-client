@@ -1,10 +1,11 @@
 import styles from "../../styles/boxOrder.module.css";
-import { ContextOrder } from "./contextOrder";
 import { useContext } from "react";
+import { ContextOrder } from "./contextOrder";
+
 
 export function BoxOrder() {
     const [order, setOrder] = useContext(ContextOrder);
-    // console.log(order)
+    console.log(order)
     // console.log(setOrder)
     return (
         <div className={styles.burgerBox}>
