@@ -1,0 +1,30 @@
+/*Component box of burger dancing*/
+.burgerBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 5%;
+    width: 700px;
+    height: 400px;
+}
+.NavigationMenunav{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+.danceBurger{
+    margin-left: 20%;
+}
+.NavigationbtnBreakfast, .NavigationbtnLunch{
+    background-color: var(--button-background);
+    font-family: var(--font-family);
+    transition: background-color .5s;
+    width: 250px;
+    height: 60px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 49px;
+    color: var(--text-color);
+}

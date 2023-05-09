@@ -1,0 +1,56 @@
+/*Component box order*/
+.burgerBox {
+    justify-content: center;
+    margin-left: 10;
+    margin-right: 5%;
+    background: rgba(197, 218, 176, 0.5);
+    width: 90%;
+    height: 400px;
+}
+
+.customer {
+    font-family: var( --font-family);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 55px;
+    color: #000000;
+    margin-left: 5%;
+}
+
+.customerName {
+    width: 500px;
+    height: 74px;
+    margin-top: 5%;
+    border-radius: 40px;
+}
+.SendOrder{
+    background-color: var(--button-background);
+    font-family: var(--font-family);
+    transition: background-color .5s;
+    width: 250px;
+    height: 60px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 49px;
+    color: var(--text-color);
+}
+.CancelORder{
+    background-color: var(--button-cancel-background);
+    font-family: var(--font-family);
+    border: solid var(--button-background);
+    border-width: 5px;
+    transition: background-color .5s;
+    width: 250px;
+    height: 60px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 49px;
+    color: var(--text-color);
+}
+.processbox{
+    display: flex;
+    justify-content: space-around;
+}
