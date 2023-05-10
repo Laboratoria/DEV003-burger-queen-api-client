@@ -1,0 +1,38 @@
+.App {
+  background-color: rgba(0,0,0);
+}
+
+.burger {
+  height: 50vh;
+  width: 50vh;
+  pointer-events: none;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+.App-main {
+  min-height: 100vh;
+  color: white;
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+.titulo{
+  color:#E6AF2E;
+  font-family: 'Roboto Slab';
+}

@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "María Higuera",
+      "username": "María",
+      "email": "maria@burgerqueen.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Andry Salazar",
+      "username": "Andry",
+      "email": "andryS@burgerqueen.com",
+      "password": "1234567"
+    },
+    {
+      "id": 3,
+      "name": "Sara Sierra",
+      "username": "Sara",
+      "email": "Sara@burgerqueen.com",
+      "password": "12345678"
+    }
+  ]
+}
