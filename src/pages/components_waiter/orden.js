@@ -13,21 +13,14 @@ export default function Orden(){
   const [client, setClient] = useState('')
   const [total, setTotal] = useContext(TotalContext) 
   const [order, setOrder] = useContext(OrderContext)
-  const [orderId, setOrderId] = useState(0)
   
-
-  function handleChangeName(event) {
-    setClient(event.target.value)
-  }
-
   function sendToKitchen() {
-    setOrderId(orderId + 1)
+
     setClient('')
     setOrder([])
     setTotal(0)
     
     const orderData = {
-      id: orderId,
       userId: 3,
       client: client,
       products: order,
@@ -50,7 +43,7 @@ export default function Orden(){
         <h2 className={waiter.underline}>orden</h2>
         <div></div>
         <div className={waiter.orderBox}>
-            <input onChange={handleChangeName} className= {waiter.client}placeholder= "Cliente" value={client}/>
+            <input onChange={(event) => setClient(event.target.value)} className= {waiter.client}placeholder= "Cliente" value={client}/>
             <input className= {waiter.table}placeholder= "Mesa"/>
              {
               order.map((item, index) =>{
