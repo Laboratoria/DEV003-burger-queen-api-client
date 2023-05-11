@@ -3,11 +3,11 @@ import Waiter from "@/pages/waiter";
 import '@testing-library/jest-dom';
  
 describe('Home', () => {
-  it('renders a heading', () => {
+  it('renders a header with title', () => {
     render(<Waiter />);
  
     const heading = screen.getByRole('heading', {
-      name: "menús",
+      name: "BURGER QUEEN",
     });
  
     expect(heading).toBeInTheDocument();
