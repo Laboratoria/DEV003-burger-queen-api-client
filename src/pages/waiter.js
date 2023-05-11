@@ -7,7 +7,7 @@ import { ProductContextProvider } from './components_waiter/productsContext'
 import { TotalProvider } from './components_waiter/totalContext'
 import { OrderProvider } from './components_waiter/orderContext'
 
-export default function waiter() {
+export default function Waiter() {
     return (
         <>
         <header>
