@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krub:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
+.backimg{
+    position: absolute;
+    top:450px;
+    z-index: 0;
+    opacity: 0.4;
+}
+.header{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+.logoBq{
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.bqTitle{
+   font-family: "Inder";
+   color: white;
+   margin-left: 5px;
+}
+.queen{
+    color: #DD5A44;
+}
+.wbtns{
+    color:black;
+    background-color: #FF7979;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    margin-left: 30px;
+
+}
+.divbtns{
+    float:right;
+    position: relative;
+    left: 140px;
+}
+.orderBox{
+    width: 350px;
+    height: 400px;
+    border-radius: 10px;
+    background-color:#4E4A4A;
+    margin-top: 100px;
+}
+.client{
+    border-radius: 5px;
+    border-bottom: solid white 2px;
+    outline: none;
+    margin-left: 50px;
+    color:white;
+    background-color: transparent;
+    width: 100px;
+    height: 35px;
+}
+.client::placeholder{
+    color: white;
+    text-align: center;
+
+}
+.table{
+    border-radius: 5px;
+    border-bottom: solid white 2px;
+    outline: none;
+    margin-left: 50px;
+    color:white;
+    background-color: transparent;
+    width: 80px;
+    height: 35px;
+}
+.table::placeholder{
+    color: white;
+    text-align: center;
+    
+}
+.totalOrder{
+    color:#FF8C8C;
+    font-family: "Krub";
+    margin-top: 30px;
+    margin-left: 20px;
+
+}
+.cleanOrder{
+    background-color: #9B564A;
+    font-family: krub;
+    border-radius: 5px;
+    border:1px solid white;
+    color: white;
+    height: 40px;
+    width: 120px;
+    position: relative;
+    top: 18px;
+    right: 50px;
+}
+.sendKitchen{
+    background-color: #DD5A44;
+    font-family: krub;
+    font-size: 20px;
+    border-radius: 5px;
+    border:1px solid white;
+    color: white;
+    height: 40px;
+    width: 100px;
+    position: relative;
+    top: 20px;
+    left: 50px;
+}
+.images{
+    margin-top: 15px;
+    width: 150px;
+    height: 150px;
+}
+.divproduct{
+    background-color: #4E4A4A;
+    width: 380px;
+    height: 200px;
+    display: flex;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.addbtn {
+    width: 100px;
+    height: 35px;
+    background-color: #DD5A44;
+    border: 1px solid white;
+    color:white;
+    border-radius: 10px;
+    position: relative;
+    top: 120px;
+    left: 70px;
+    font-size: 20px;
+}
+.productprice{
+    position: absolute;
+    top: 80px;
+    left: 220px;
+    font-size: 20px;
+    font-family: 'Krub';
+}
+.product{
+    position: absolute;
+    top: 25px;
+    left: 220px;
+    font-size: 20px;
+    font-family: 'Krub';
+}
+.desayunoBtn{
+    color: white;
+    font-family: Krub;
+    background-color:#4E4A4A ;
+    margin-top: 30px;
+    width: 180px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 3px;
+    margin-left: 20px;
+}
+.almuerzoBtn{
+    color: white;
+    font-family: Krub;
+    background-color:#4E4A4A ;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    width: 180px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 3px;
+}
+.almuerzoBtn:active{
+    color:#FF7979;
+}
+.desayunoBtn:active{
+    color:#FF7979;
+}
+.divproduct{
+    color:white;
+    font-family: inder;
+    margin-left: 20px;
+}
+.divMain{
+    display: flex;
+    flex-direction: row;
+}
+.menuComp{
+    text-align: center;
+    margin-top: 50px;
+    z-index: 1;
+    height: 900px;
+}
+.orderComp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 50px;
+    z-index: 1;
+}
+.exitBtn{
+
+    color:black;
+    background-color: #FF7979;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Krub';
+    font-weight: bolder;
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+}
+.underline {
+    font-size: 30px;
+    font-weight: 100;
+    font-family: 'Lemon';
+    text-decoration: underline;
+    text-decoration-color: #FF7979;
+}
+.divOrder {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    color: white;
+    font-family: Krub;
+    font-size: 17px;
+
+}
+.minusBtn{
+    position:relative;
+    left: 10px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: #FF7979;
+    border:none;
+    font-size: 17px;
+    color:white;
+}
+.qty{
+    position:relative;
+    left: 15px;
+}
+.orderName{
+    margin-left: 20px;
+}
+.orderPrice{
+    position:absolute;
+    right: 30px;
+}
