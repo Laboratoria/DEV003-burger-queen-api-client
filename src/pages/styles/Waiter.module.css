@@ -49,16 +49,18 @@
     border-radius: 10px;
     background-color:#4E4A4A;
     margin-top: 100px;
+    --color: #FFFFFF;
 }
 .client{
     border-radius: 5px;
-    border-bottom: solid white 2px;
-    outline: none;
     margin-left: 50px;
-    color:white;
-    background-color: transparent;
     width: 100px;
     height: 35px;
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    border-bottom: 2px solid var(--color) ;
 }
 .client::placeholder{
     color: white;
@@ -67,13 +69,14 @@
 }
 .table{
     border-radius: 5px;
-    border-bottom: solid white 2px;
-    outline: none;
     margin-left: 50px;
-    color:white;
-    background-color: transparent;
     width: 80px;
     height: 35px;
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    border-bottom: 2px solid var(--color) ;
 }
 .table::placeholder{
     color: white;
@@ -229,6 +232,7 @@
     font-family: 'Lemon';
     text-decoration: underline;
     text-decoration-color: #FF7979;
+    color: white;
 }
 .divOrder {
     display: flex;
