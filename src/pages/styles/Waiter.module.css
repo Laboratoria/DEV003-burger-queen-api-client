@@ -15,18 +15,17 @@
     align-items: center;
 }
 .logoBq{
-    border-radius: 50%;
     margin-left: 10px;
     margin-top: 10px;
 }
 .bqTitle{
    font-family: "Inder";
+   font-size: 30px;
+   position: relative;
    color: white;
-   margin-left: 5px;
+   left: -30px;
 }
-.queen{
-    color: #DD5A44;
-}
+
 .wbtns{
     color:black;
     background-color: #FF7979;
@@ -41,7 +40,7 @@
 .divbtns{
     float:right;
     position: relative;
-    left: 140px;
+    left: 120px;
 }
 .orderBox{
     width: 350px;
@@ -90,17 +89,22 @@
     margin-left: 20px;
 
 }
+.orderBtns {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    justify-content: space-around;
+    margin-top: 15px;
+}
 .cleanOrder{
     background-color: #9B564A;
     font-family: krub;
     border-radius: 5px;
     border:1px solid white;
+    font-size: 17px;
     color: white;
     height: 40px;
-    width: 120px;
-    position: relative;
-    top: 18px;
-    right: 50px;
+    width: 140px;
 }
 .sendKitchen{
     background-color: #DD5A44;
@@ -111,9 +115,6 @@
     color: white;
     height: 40px;
     width: 100px;
-    position: relative;
-    top: 20px;
-    left: 50px;
 }
 .images{
     margin-top: 15px;

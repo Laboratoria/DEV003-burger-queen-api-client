@@ -75,8 +75,8 @@ export default function Orden(){
         </div>
 
         <div className= {waiter.orderBtns}>
-        <button onClick={() => {setTotal(0); setOrder([]); setClient('') }} className={waiter.cleanOrder}>Limpiar Orden</button>
-        <button onClick={sendToKitchen} className={waiter.sendKitchen}>Enviar</button>
+          <button onClick={sendToKitchen} className={waiter.sendKitchen}>Enviar</button>
+          <button onClick={() => {setTotal(0); setOrder([]); setClient('') }} className={waiter.cleanOrder}>Limpiar Orden</button>
         </div>
 
       </div>

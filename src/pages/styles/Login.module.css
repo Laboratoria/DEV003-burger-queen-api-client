@@ -3,39 +3,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap');
 
 .logoBq{
-  border-radius: 50%;
-  margin-left: 10px;
   margin-top: 10px;
-  height: 130px;
-  width: 130px;
+  height: 140px;
+  width: 170px;
 }
-.bqTitle{
-  font-family: "Inder";
+.logintitle {
   color: white;
-  margin-left: 15px;
+  font-family: Inder;
   font-size: 30px;
+  position: relative;
+  left: -30px;
 }
-.queen{
-   color: #DD5A44;
-}
-.loginTitle {
+.formTitle {
   position: relative;
   font-family: 'Raleway';
   color: whitesmoke;
 }
-
+.formTitleTwo {
+  color:#DD5A44;
+}
 .form_container {
   font-size: 1.5rem;
   display: grid;
   gap: 2.5em;
   position: relative;
-  top: 160px;
-  left: 17%;
+  top: 100px;
+  left: 16%;
   height: 530px;
   width: 450px;
   padding: 3.5em 2.5em;
   text-align: center;
-  background: rgba(137, 132, 132, 0.3);
+  background: rgba(31,27,27, 0.4);
   border: 1px solid #FFFFFF;
   box-shadow: 0px 0px 15px 10px rgba(255, 255, 255, 0.4);
   border-radius: 10px;
@@ -62,14 +60,14 @@
   border: none;
   color: white;
   outline: none;
-  border-bottom: 2px solid var(--color) ;
+  border-bottom: 2px solid white ;
   font-size: 1rem;
   padding: .6em .3em;
   font-family: 'Krub';
   font-size: 25px;
 }
 .form__Label {
-  color:white;
+  color:rgb(244, 205, 177);
   position: absolute;
   top:0px;
   left: 5px;
@@ -78,10 +76,12 @@
   transform: translateY(20px);
 }
 .form__input:focus + .form__Label, .form__input:not(:placeholder-shown) + .form__Label {
-  transform: translateY(-12px) scale(.7) ;
+  transform: translateY(-12px) scale(.9) ;
   transform-origin: top left;
   color: var(--color);
-
+}
+.form__input:focus {
+  border-bottom: 2px solid var(--color);
 }
 
 .login_submit {
@@ -99,14 +99,14 @@
 }
 .login_submit:hover {
   border: 1px solid rgb(231, 181, 181);
-  box-shadow: 0px 0px 8px rgb(233, 162, 162);
+  box-shadow: 0px 0px 15px rgb(255, 150, 150);
 }
 
 .loginburger {
   position: absolute;
-    top: 10px;
-    right: 60px;
-    height: 850px;
-    width: 600px;
+    bottom: 0px;
+    left: 370px;
+    height: 580px;
+    width: 450px;
     z-index: -1;
 }

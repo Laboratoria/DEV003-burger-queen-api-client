@@ -11,13 +11,13 @@ export default function Home() {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/burgericon.png" />
     </Head>
-    <header style={{display: 'flex', alignItems: 'center'}}>
-      <img src='/bq-logo.jpg' className={styles.logoBq} />
-        <h1 className= {styles.bqTitle}>BURGER <span className={styles.queen} >QUEEN</span></h1>
+    <header style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      <img src='/bqlogo.png' className={styles.logoBq} />
+      <h2 className={styles.logintitle} >Burger Queen</h2>
     </header>
       <main className={styles.login_container} >
         <LoginForm/>
-        <img src='/burgerLogin.png' className={styles.loginburger} />
+        <img src='/burger_login.png' className={styles.loginburger} />
       </main>
       
     </>

@@ -23,14 +23,14 @@ export default function Waiter() {
 
           <Image 
           className={waiterStyle.logoBq}
-          src="/bq-logo.jpg"
+          src="/bqlogo.png"
           alt= "BQ logo"
-          width={100}
-          height={100}
+          width={170}
+          height={140}
           priority
           />
 
-          <h1 className= {waiterStyle.bqTitle}>BURGER <span className={waiterStyle.queen} >QUEEN</span></h1>
+          <h1 className= {waiterStyle.bqTitle}>Burger Queen</h1>
          <div className= {waiterStyle.divbtns}>
              <Link href='/kitchen'><button className={waiterStyle.wbtns}>Cocina</button> </Link>
              
