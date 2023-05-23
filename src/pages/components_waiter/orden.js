@@ -5,7 +5,6 @@ import { OrderContext } from './orderContext'
 import RenderOrderProduct from './renderorder'
 import { useState } from 'react'
 import axios from 'axios'
-import { token } from './productsContext'
 import { showDate } from './date'
 
 export default function Orden(){
@@ -13,6 +12,8 @@ export default function Orden(){
   const [client, setClient] = useState('')
   const [total, setTotal] = useContext(TotalContext) 
   const [order, setOrder] = useContext(OrderContext)
+  // const token = localStorage.getItem('userToken')
+  // const waiterId = localStorage.getItem('userId')
   
   function sendToKitchen() {
 
@@ -21,7 +22,7 @@ export default function Orden(){
     setTotal(0)
     
     const orderData = {
-      userId: 3,
+      userId: waiterId,
       client: client,
       products: order,
       status: 'pending',

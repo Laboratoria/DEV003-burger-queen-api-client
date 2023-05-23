@@ -110,3 +110,13 @@
     width: 450px;
     z-index: -1;
 }
+.errorsDiv {
+  background-color: rgba(250, 33, 33, 0.93);
+  color: white;
+  height: 50px;
+  border-radius: 10px;
+  transition: .5s ;
+  position: absolute;
+  bottom: 30px;
+  opacity: 0;
+}

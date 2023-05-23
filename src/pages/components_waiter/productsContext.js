@@ -2,12 +2,13 @@ import {useState, useEffect, createContext} from 'react'
 import axios from 'axios'
 
 export const ProductsContext = createContext()
-export const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBydWViYWx1aXNhQGdtYWlsLmNvbSIsImlhdCI6MTY4Mzg0MDYyNCwiZXhwIjoxNjgzODQ0MjI0LCJzdWIiOiIzIn0.HK0xum8F8ZVvvPU7TyH6gLnMB9JsMcw_eYN4kkBPREw'
+// const token = localStorage.getItem('userToken')
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBydWViYWx1aXNhQGdtYWlsLmNvbSIsImlhdCI6MTY4NDgxNTk1NCwiZXhwIjoxNjg0ODE5NTU0LCJzdWIiOiIzIn0.FSnGPgilgY_-Lw5bPRvWljH746dS6tMzOn9keAs9EU0"
 export const ProductContextProvider = ({children}) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        
+
         axios.get('http://localhost:8080/products', {
             headers: {
                 Authorization: `Bearer ${token}`

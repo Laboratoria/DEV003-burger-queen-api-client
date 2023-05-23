@@ -1,8 +1,11 @@
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 import styles from '../styles/Login.module.css'
-import { useState } from 'react'
+import Link from 'next/link'
 
 const patterns = {
-    email: /^\w.+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$/
+    email:  /^\w.+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$/,
+    password: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{1,10}$/
 }
 
 export default function LoginForm() {
@@ -10,6 +13,7 @@ export default function LoginForm() {
         email: '',
         password: ''
     })
+    const [errorMessage, setErrorMessage] = useState('')
     
     const handleInput = (e) => {
         const {name, value} = e.target
@@ -18,34 +22,71 @@ export default function LoginForm() {
             [name]: value,
         })
     }
-
     const handleForm = (e) => {
-        e.preventDefault()
-        console.log(values)
-        setValues({
-            email: '',
-            password: '',
-            error: values.error = !patterns.email.test(e.target.value) ?? undefined
-        });
+      e.preventDefault()
+        
+      const { email, password } = values;
+
+      if (!email.match(patterns.email)) {
+        setErrorMessage(`\u25EC Ingresa un correo electrónico válido`);
+        return;
+      }
+      if (!password.match(patterns.password)) {
+        setErrorMessage(`\u25EC La contraseña debe contener letras y números con un máximo de 10`);
+        return;
+      }
+      setValues({
+        email: '',
+        password: ''
+      });
+      
+        axios.post('http://localhost:8080/login', {"email": email, "password": password})
+        .then(response => {
+            <Link href='/waiter'/>
+            localStorage.setItem('userToken', response.data.accessToken);
+            localStorage.setItem('userId', response.data.user.id);
+            console.log(response)
+        })
+        .catch(err => setErrorMessage('No tiene autorización para ingresar al sistema.'))
+        
     }
- 
+    useEffect(() => {
+       
+     const timeout = setTimeout(() => {
+        setErrorMessage('');
+     }, 3000);
+    
+     return () => {
+        clearTimeout(timeout);
+     };
+    }, [errorMessage]);
+    
+   
     return (
         <>
         <form className={styles.form_container} onSubmit={handleForm} >
             <h2 className={styles.formTitle}>Inicia <span className={styles.formTitleTwo}>sesión</span></h2>
 
             <div className={styles.input__group}>
-              <input onChange={handleInput} className={styles.form__input} type="text" value={values.email} name="email" placeholder=" " />
+              <input onChange={handleInput} className={styles.form__input} type="email" value={values.email} name="email" placeholder=" " />
               <label htmlFor="email" className={styles.form__Label} >Correo electrónico:</label>
             </div> 
 
             <div className={styles.input__group}>
-              <input onChange={handleInput} className={styles.form__input} type="text" value={values.password} name="password" placeholder=" " />
+              <input onChange={handleInput} className={styles.form__input} type="text" value={values.password} name="password" maxLength={10} placeholder=" " />
               <label htmlFor="password" className={styles.form__Label} >Contraseña:</label>
             </div>
 
             <input className={styles.login_submit} type="submit" value="Ingresar"/>
         </form>
+
+        {
+          errorMessage && (
+            <div className={styles.errorsDiv} style= {{opacity: 1}}>
+             <p>{errorMessage}</p>
+            </div>
+          )
+        }
         </>
     )
 }
