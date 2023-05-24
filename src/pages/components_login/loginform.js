@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import styles from '../styles/Login.module.css'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const patterns = {
     email:  /^\w.+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$/,
@@ -9,6 +9,9 @@ const patterns = {
 }
 
 export default function LoginForm() {
+
+  const router = useRouter()
+
     const [values, setValues] = useState({
         email: '',
         password: ''
@@ -42,10 +45,10 @@ export default function LoginForm() {
       
         axios.post('http://localhost:8080/login', {"email": email, "password": password})
         .then(response => {
-            <Link href='/waiter'></Link>
+            
             localStorage.setItem('userToken', response.data.accessToken);
             localStorage.setItem('userId', response.data.user.id);
-            console.log(response)
+            router.push('/waiter');
         })
         .catch(err => setErrorMessage('No tiene autorización para ingresar al sistema.'))
         

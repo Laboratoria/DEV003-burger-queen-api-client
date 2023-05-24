@@ -3,6 +3,7 @@ import { useState, useContext, useEffect} from "react"
 import RenderMenus from './rendermenus'
 import { ProductsContext } from './productsContext'
 import { TokenContext } from './tokenContext'
+import { useRouter } from 'next/router'
 
 function ProductsMenus() {
 
@@ -54,9 +55,16 @@ function ProductsMenus() {
 }
 
 export default function Menus(){
+  
   const [loginData, setLoginData] = useContext(TokenContext)
+  const router = useRouter()
+  
   const exitWaiter = () => {
-    console.log(loginData)
+    router.push('/')
+    setLoginData({
+      token: localStorage.setItem('userToken', ''),
+      userId: localStorage.setItem('userId', '')
+    })
   };
     return (
       <div className={waiter.menuComp}>
