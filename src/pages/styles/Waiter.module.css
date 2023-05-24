@@ -138,23 +138,24 @@
     color:white;
     border-radius: 10px;
     position: relative;
-    top: 120px;
+    top: 140px;
     left: 70px;
     font-size: 20px;
 }
 .productprice{
     position: absolute;
-    top: 80px;
-    left: 220px;
+    top: 75px;
+    left: 245px;
     font-size: 20px;
     font-family: 'Krub';
 }
 .product{
     position: absolute;
-    top: 25px;
-    left: 220px;
+    top: 10px;
+    left: 200px;
     font-size: 20px;
     font-family: 'Krub';
+    margin-right: 5px;
 }
 .desayunoBtn{
     color: white;

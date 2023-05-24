@@ -42,7 +42,7 @@ export default function LoginForm() {
       
         axios.post('http://localhost:8080/login', {"email": email, "password": password})
         .then(response => {
-            <Link href='/waiter'/>
+            <Link href='/waiter'></Link>
             localStorage.setItem('userToken', response.data.accessToken);
             localStorage.setItem('userId', response.data.user.id);
             console.log(response)

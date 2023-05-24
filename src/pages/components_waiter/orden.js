@@ -1,9 +1,9 @@
 import waiter from '../styles/Waiter.module.css'
+import { useState, useContext } from 'react'
+import { TokenContext } from './tokenContext'
 import { TotalContext } from './totalContext'
-import { useContext } from 'react'
 import { OrderContext } from './orderContext'
 import RenderOrderProduct from './renderorder'
-import { useState } from 'react'
 import axios from 'axios'
 import { showDate } from './date'
 
@@ -12,17 +12,18 @@ export default function Orden(){
   const [client, setClient] = useState('')
   const [total, setTotal] = useContext(TotalContext) 
   const [order, setOrder] = useContext(OrderContext)
-  // const token = localStorage.getItem('userToken')
-  // const waiterId = localStorage.getItem('userId')
+  const [loginData] = useContext(TokenContext)
+  
+  const token = loginData.token
   
   function sendToKitchen() {
 
     setClient('')
     setOrder([])
     setTotal(0)
-    
+  
     const orderData = {
-      userId: waiterId,
+      userId: loginData.userId,
       client: client,
       products: order,
       status: 'pending',

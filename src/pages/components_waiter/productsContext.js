@@ -1,11 +1,14 @@
-import {useState, useEffect, createContext} from 'react'
+import {useState, useEffect, createContext, useContext} from 'react'
+import { TokenContext } from './tokenContext'
 import axios from 'axios'
 
 export const ProductsContext = createContext()
-// const token = localStorage.getItem('userToken')
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBydWViYWx1aXNhQGdtYWlsLmNvbSIsImlhdCI6MTY4NDgxNTk1NCwiZXhwIjoxNjg0ODE5NTU0LCJzdWIiOiIzIn0.FSnGPgilgY_-Lw5bPRvWljH746dS6tMzOn9keAs9EU0"
+   const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBydWViYWx1aXNhQGdtYWlsLmNvbSIsImlhdCI6MTY4NDg5NjczNSwiZXhwIjoxNjg0OTAwMzM1LCJzdWIiOiIzIn0.MTEpXAhAMcLi1FeqAeMYrYC7REViLoBeY9AeVmpIeCY"
 export const ProductContextProvider = ({children}) => {
     const [products, setProducts] = useState([])
+    
+    const loginData = useContext(TokenContext)
+    const accesToken = loginData.token
 
     useEffect(() => {
 

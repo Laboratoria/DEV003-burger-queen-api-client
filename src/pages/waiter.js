@@ -7,6 +7,7 @@ import waiterStyle from './styles/Waiter.module.css'
 import { ProductContextProvider } from './components_waiter/productsContext'
 import { TotalProvider } from './components_waiter/totalContext'
 import { OrderProvider } from './components_waiter/orderContext'
+import { TokenContextProvider } from './components_waiter/tokenContext'
 
 export default function Waiter() {
     return (
@@ -38,6 +39,7 @@ export default function Waiter() {
          </div>
           </div>
         </header>
+        <TokenContextProvider>
         <ProductContextProvider>
           <OrderProvider>
           <TotalProvider>
@@ -48,6 +50,7 @@ export default function Waiter() {
           </TotalProvider>
           </OrderProvider>
         </ProductContextProvider>
+        </TokenContextProvider>
          
         <Image 
         className={waiterStyle.backimg}
@@ -57,7 +60,6 @@ export default function Waiter() {
         height={730}
         priority
         />
-        <button className={waiterStyle.exitBtn}>SALIR</button>
         </>
     )
 }
