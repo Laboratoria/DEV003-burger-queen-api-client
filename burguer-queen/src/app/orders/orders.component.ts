@@ -62,9 +62,12 @@ export class OrdersComponent {
     this.updateApiOrder(id, update)
   }
 
+  // Fx que resta dateProcessed con dataEntry, probar convirtiendolo en numero.
+  // Definir variable en cero y asignar la hora de creacion y luego actualizar cuando se cree el date processed.
+  // si no, que inicie en 00:00 y se actualice la resta al cambio de status
 
-  cheffStatus(status:string){
-    return status === 'pending' || status === 'delivering' ? true : false;
-  }
+  // cheffStatus(status:string) {
+  //   if (status === 'pending' || status === 'delivering') {return true} else {return false}
+  // }
 
 }
