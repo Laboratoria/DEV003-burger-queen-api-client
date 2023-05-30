@@ -13,13 +13,13 @@
             <div class="col-7">
               <p>Products</p>
               <div *ngFor="let orderProducts of order.products">
-                {{orderProducts.product.name}}
+                <p>{{orderProducts.product.name}}</p>
               </div>
             </div>
             <div class="col-5">
-              <p>Quantity</p>
+              <p class="d-flex justify-content-center">Qty</p>
               <div *ngFor="let orderProducts of order.products">
-                {{orderProducts.qty}}
+                <p class="d-flex justify-content-center">{{orderProducts.qty}}</p>
               </div>
             </div>
           </div>
@@ -27,7 +27,7 @@
           <div class="row" class="row rounded m-1 my-2 px-2 w">
             <div class="col">
               <label for="status">Status:</label>
-              <select #selecStatus [(ngModel)]="order.status" (ngModelChange)="updateOrder(order.id, selecStatus.value)" name="status" id="status">
+              <select #selecStatus [(ngModel)]="order.status" (ngModelChange)="updateOrder(order, selecStatus.value)" name="status" id="status">
                 <option [selected]="order.status === 'pending'">pending</option>
                 <option [selected]="order.status === 'canceled'">canceled</option>
                 <option [selected]="order.status === 'delivering'">delivering</option>
@@ -35,9 +35,10 @@
               </select>
             </div>
             <div class="col">
-              <p>Time</p>
-              {{order.dataEntry | date: 'shortTime'}}
-              {{order.dateProcessed | date: 'shortTime'}}
+              <p>Preparing Time: {{ calcPreparingTime(order) }} min</p>
+
+              <!-- <p>Tiempo de preparación: {{ calcPreparingTime(order) }} minutos</p> -->
+              <!-- {{this.timeAct | date: 'HH:mm'}} -->
 
             </div>
           </div>
