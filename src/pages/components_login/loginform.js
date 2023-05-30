@@ -59,7 +59,7 @@ export default function LoginForm() {
     useEffect(() => {
      const timeout = setTimeout(() => {
         setErrorMessage('');
-     }, 3000);
+     }, 2500);
     
      return () => {
         clearTimeout(timeout);
@@ -83,16 +83,12 @@ export default function LoginForm() {
               <label htmlFor="password" className={styles.form__Label} >Contraseña:</label>
             </div>
 
-            <input className={styles.login_submit} type="submit" value="Ingresar"/>
+            <input className={styles.login_submit}  type="submit" value="Ingresar"/>
         </form>
-
-        {
-          errorMessage && (
-            <div className={styles.errorsDiv} style= {{opacity: 1}}>
-             <p>{errorMessage}</p>
-            </div>
-          )
-        }
-        </>
+      
+        <div className={styles.errorsDiv} style= {{opacity: errorMessage ? 1 : 0}}>
+          <p className={styles.errors} >{errorMessage}</p>
+        </div>
+      </>
     )
 }
