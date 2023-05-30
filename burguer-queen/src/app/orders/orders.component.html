@@ -29,17 +29,13 @@
               <label for="status">Status:</label>
               <select #selecStatus [(ngModel)]="order.status" (ngModelChange)="updateOrder(order, selecStatus.value)" name="status" id="status">
                 <option [selected]="order.status === 'pending'">pending</option>
-                <option [selected]="order.status === 'canceled'">canceled</option>
+                <option [style.display]="verifyUser()" [selected]="order.status === 'canceled'">canceled</option>
                 <option [selected]="order.status === 'delivering'">delivering</option>
-                <option [selected]="order.status === 'delivered'">delivered</option>
+                <option [style.display]="verifyUser()" [selected]="order.status === 'delivered'">delivered</option>
               </select>
             </div>
             <div class="col">
               <p>Preparing Time: {{ calcPreparingTime(order) }} min</p>
-
-              <!-- <p>Tiempo de preparación: {{ calcPreparingTime(order) }} minutos</p> -->
-              <!-- {{this.timeAct | date: 'HH:mm'}} -->
-
             </div>
           </div>
         </section>
