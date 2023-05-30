@@ -5,19 +5,22 @@ export const TokenContext = createContext()
 export const TokenContextProvider = ({children}) => {
 
     const [loginData, setLoginData] = useState({
-        token: '',
-        userId: ''
+      token: '',
+      userId: ''
     })
     
     useEffect(() => {
 
-      setLoginData({
-        token: loginData.token = localStorage.getItem('userToken') ?? undefined ,
-        userId: loginData.userId = localStorage.getItem('userId') ?? undefined
-    })  
-    }, [])
+    const storedToken = localStorage.getItem('userToken');
+    const storedUserId = localStorage.getItem('userId');
 
-    return (
+      setLoginData({
+        token: storedToken ?? '', 
+        userId: storedUserId ?? ''
+      });   
+    }, [])
+     
+   return (
         <TokenContext.Provider value={[loginData, setLoginData]}>
           {children}
         </TokenContext.Provider>

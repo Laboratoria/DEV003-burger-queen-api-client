@@ -48,13 +48,15 @@ export default function LoginForm() {
             
             localStorage.setItem('userToken', response.data.accessToken);
             localStorage.setItem('userId', response.data.user.id);
-            router.push('/waiter');
+            
+            setTimeout(() => {
+              router.push('/waiter');
+            }, 500);
         })
         .catch(err => setErrorMessage('No tiene autorización para ingresar al sistema.'))
         
     }
     useEffect(() => {
-       
      const timeout = setTimeout(() => {
         setErrorMessage('');
      }, 3000);
@@ -62,8 +64,9 @@ export default function LoginForm() {
      return () => {
         clearTimeout(timeout);
      };
+     
     }, [errorMessage]);
-    
+  
    
     return (
         <>

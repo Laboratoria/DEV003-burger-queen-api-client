@@ -5,25 +5,30 @@ import axios from 'axios'
 export const ProductsContext = createContext()
 
 export const ProductContextProvider = ({children}) => {
-    const [products, setProducts] = useState([])
     
+    const [products, setProducts] = useState([])
     const [loginData] = useContext(TokenContext)
     
     const token = loginData.token
-
     useEffect(() => {
-
-        axios.get('http://localhost:8080/products', {
-            headers: {
+        const getData = async () => {
+          try {
+            const response = await axios.get('http://localhost:8080/products', {
+              headers: {
                 Authorization: `Bearer ${token}`
-            }
-        })
-        .then(response => {
-            setProducts(response.data)
-        })
-        .catch(console.log)
-    }, [])
-
+              }
+            });
+            setProducts(response.data);
+          } catch (error) {
+            console.log(error);
+          }
+        };
+      
+        if (token) {
+          getData();
+        }
+      }, [token]);
+   
     return (
         <ProductsContext.Provider value={products}>
            {children}
