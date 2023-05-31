@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';//un observable es un flujo de eventos o datos
 })
 export class ApiBQService {
 
-  url:string = "http://localhost:8080/";
+  url:string = "https://burgerqueen-db.onrender.com/";
 
   constructor(private http:HttpClient) { }
 

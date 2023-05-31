@@ -17,8 +17,6 @@ export class OrdersComponent {
   verifyUser() {
     const sessionUser = sessionStorage.getItem('user')
     if (sessionUser === 'cheff') { return 'none' } else {return 'block'}
-
-
   }
 
 
@@ -74,9 +72,7 @@ export class OrdersComponent {
     // Convertir tiempo transcurrido de milisegundos a minutos
     const minutes = Math.floor(timeDelivered / (1000 * 60));
 
-    return minutes;
+    if (isNaN(minutes)) { return 0
+    } else { return minutes}
   }
-
-
-
 }
