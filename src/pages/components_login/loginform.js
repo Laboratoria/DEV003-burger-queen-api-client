@@ -74,12 +74,12 @@ export default function LoginForm() {
             <h2 className={styles.formTitle}>Inicia <span className={styles.formTitleTwo}>sesión</span></h2>
 
             <div className={styles.input__group}>
-              <input onChange={handleInput} className={styles.form__input} type="email" value={values.email} name="email" placeholder=" " />
+              <input onChange={handleInput} className={styles.form__input} type="email" value={values.email} name="email" placeholder=" " autoComplete='off' />
               <label htmlFor="email" className={styles.form__Label} >Correo electrónico:</label>
             </div> 
 
             <div className={styles.input__group}>
-              <input onChange={handleInput} className={styles.form__input} type="text" value={values.password} name="password" maxLength={10} placeholder=" " />
+              <input onChange={handleInput} className={styles.form__input} type="text" value={values.password} name="password" maxLength={10} placeholder=" " autoComplete='off' />
               <label htmlFor="password" className={styles.form__Label} >Contraseña:</label>
             </div>
 
