@@ -1,3 +1,16 @@
+import { TokenContextProvider } from "./components_waiter/tokenContext";
+import { KitchenContextProvider } from "./components_kitchen/kitchenContext";
+import { AllOrder } from "./components_kitchen/renderAll";
+
 export default function Kitchen() {
-    return <h1> Esta es la cocina</h1>
+   
+   return (
+    <>
+    <TokenContextProvider>
+      <KitchenContextProvider>
+        <AllOrder/>
+      </KitchenContextProvider>
+    </TokenContextProvider>
+    </>
+   )
 }
