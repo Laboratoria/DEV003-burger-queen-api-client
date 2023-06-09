@@ -2,6 +2,18 @@ import { useContext } from "react";
 import { KitchenContext } from "./kitchenContext";
 
 export function AllOrder () {
-    const value = useContext(KitchenContext)
-    return <p>{value}</p>
+    const orderContent = useContext(KitchenContext)
+    return (
+        <>
+        {
+            orderContent.map((element,index) => {
+                return (
+                    <div key={index}>
+                        <h3 style={{color: "wheat"}} >{element.client}</h3>
+                    </div>
+                )
+            })
+        }
+        </>
+    )
 }

@@ -8,7 +8,9 @@ export default function Kitchen() {
     <>
     <TokenContextProvider>
       <KitchenContextProvider>
-        <AllOrder/>
+        <div>
+         <AllOrder/>   
+        </div>
       </KitchenContextProvider>
     </TokenContextProvider>
     </>
