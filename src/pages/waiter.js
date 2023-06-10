@@ -7,6 +7,7 @@ import { ProductContextProvider } from './components_waiter/productsContext'
 import { TotalProvider } from './components_waiter/totalContext'
 import { OrderProvider } from './components_waiter/orderContext'
 import { TokenContextProvider } from './components_waiter/tokenContext'
+import { UserContextProvider } from './components_login/userContext'
 
 export default function Waiter() {
     return (
@@ -31,6 +32,7 @@ export default function Waiter() {
          </div>
           </div>
         </header>
+        <UserContextProvider>
         <TokenContextProvider>
         <ProductContextProvider>
           <OrderProvider>
@@ -43,6 +45,7 @@ export default function Waiter() {
           </OrderProvider>
         </ProductContextProvider>
         </TokenContextProvider>
+        </UserContextProvider>
          
         <Image 
         className={waiterStyle.backimg}

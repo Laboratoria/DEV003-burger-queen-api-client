@@ -1,7 +1,8 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import styles from '../styles/Login.module.css'
 import { useRouter } from 'next/router'
+import { UserContext } from './userContext'
 
 const patterns = {
     email:  /^\w.+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$/,
@@ -10,6 +11,7 @@ const patterns = {
 
 export default function LoginForm() {
 
+  const {updateUser} = useContext(UserContext);
   const router = useRouter()
 
     const [values, setValues] = useState({
@@ -42,6 +44,8 @@ export default function LoginForm() {
         email: '',
         password: ''
       });
+
+      updateUser(email, password);
       
         axios.post('http://localhost:8080/login', {"email": email, "password": password})
         .then(response => {
