@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect, useContext } from "react"
-import { UserContext } from "../components_login/userContext"
 import jwt from "jsonwebtoken"
 import axios from "axios"
 
@@ -7,15 +6,14 @@ export const TokenContext = createContext()
 
 export const TokenContextProvider = ({children}) => {
 
-  const {user} = useContext(UserContext)
-
     const [loginData, setLoginData] = useState({
       token: '',
-      userId: ''
+      userId: '',
     })
-
-    const accessToken = localStorage.getItem('userToken');
-    const decodedToken = jwt.decode(accessToken)
+    const [userData, setUserData] = useState({
+      usermail: '',
+      userpassword: ''
+    })
 
     useEffect(() => {
 
@@ -23,11 +21,12 @@ export const TokenContextProvider = ({children}) => {
     const storedUserId = localStorage.getItem('userId');
 
       setLoginData({
-        token: storedToken ?? '', 
-        userId: storedUserId ?? ''
+        token: storedToken , 
+        userId: storedUserId 
       });  
-      
-    }, [])
+
+      const accessToken = localStorage.getItem('userToken');
+      const decodedToken = jwt.decode(accessToken)
 
       if (decodedToken) {
         const currentTime = new Date();
@@ -36,7 +35,7 @@ export const TokenContextProvider = ({children}) => {
         const timeRemaining = expirationDate - currentTime;
 
         const refreshToken = async () => {
-          const response = await axios.post('http://localhost:8080/login', {"email":user.user, "password":user.password})
+          const response = await axios.post('http://localhost:8080/login', {"email":userData.usermail, "password": userData.userpassword})
           setLoginData({
            token: response.data.accessToken,
            userId: response.data.user.id
@@ -47,8 +46,10 @@ export const TokenContextProvider = ({children}) => {
   
       }
       
+    }, [])
+    
    return (
-        <TokenContext.Provider value={[loginData, setLoginData]}>
+        <TokenContext.Provider value={{loginData, setLoginData, userData, setUserData}}>
           {children}
         </TokenContext.Provider>
     )

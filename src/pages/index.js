@@ -1,6 +1,5 @@
 import LoginForm from './components_login/loginform'
 import styles from './styles/Login.module.css'
-import { UserContextProvider } from './components_login/userContext'
 
 export default function Home() {
   return (
@@ -10,9 +9,7 @@ export default function Home() {
       <h2 className={styles.logintitle} >Burger Queen</h2>
     </header>
       <main>
-        <UserContextProvider>
           <LoginForm/>
-        </UserContextProvider>
         <img src='/burger_login.png' className={styles.loginburger} />
       </main>
       

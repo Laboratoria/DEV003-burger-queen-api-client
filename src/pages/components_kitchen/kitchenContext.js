@@ -6,7 +6,7 @@ export const KitchenContext = createContext();
 
 export function KitchenContextProvider({children}) {
     const [orderData, setOrderData] = useState([])
-    const [loginData] = useContext(TokenContext)
+    const {loginData} = useContext(TokenContext)
     const token = loginData.token
 
     useEffect(() => {

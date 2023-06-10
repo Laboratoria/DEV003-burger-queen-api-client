@@ -12,7 +12,7 @@ export default function Orden(){
   const [client, setClient] = useState('')
   const [total, setTotal] = useContext(TotalContext) 
   const [order, setOrder] = useContext(OrderContext)
-  const [loginData] = useContext(TokenContext)
+  const {loginData} = useContext(TokenContext)
   
   const token = loginData.token
   

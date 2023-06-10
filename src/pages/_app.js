@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { TokenContextProvider } from './components_waiter/tokenContext';
 import './styles/globals.css'
 
 export default function App({ Component, pageProps }) {
@@ -24,7 +25,10 @@ export default function App({ Component, pageProps }) {
       <link rel="icon" href="/burgericon.png" />
       <meta charSet="utf-8" />
     </Head>
-    <Component {...pageProps} />
+    <TokenContextProvider>
+      <Component {...pageProps} />
+    </TokenContextProvider>
+    
     </>
   )
 }

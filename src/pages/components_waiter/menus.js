@@ -56,7 +56,7 @@ function ProductsMenus() {
 
 export default function Menus(){
   
-  const [loginData, setLoginData] = useContext(TokenContext)
+  const {loginData, setLoginData} = useContext(TokenContext)
   const router = useRouter()
   
   const exitWaiter = () => {

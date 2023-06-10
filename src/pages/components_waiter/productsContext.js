@@ -7,7 +7,7 @@ export const ProductsContext = createContext()
 export const ProductContextProvider = ({children}) => {
     
     const [products, setProducts] = useState([])
-    const [loginData] = useContext(TokenContext)
+    const {loginData} = useContext(TokenContext)
     
     const token = loginData.token
     useEffect(() => {

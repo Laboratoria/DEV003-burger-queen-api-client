@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { useState, useEffect, useContext } from 'react'
+import { TokenContext } from '../components_waiter/tokenContext'
 import styles from '../styles/Login.module.css'
 import { useRouter } from 'next/router'
-import { UserContext } from './userContext'
 
 const patterns = {
     email:  /^\w.+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$/,
@@ -11,7 +11,7 @@ const patterns = {
 
 export default function LoginForm() {
 
-  const {updateUser} = useContext(UserContext);
+  const {setUserData} = useContext(TokenContext)
   const router = useRouter()
 
     const [values, setValues] = useState({
@@ -27,6 +27,7 @@ export default function LoginForm() {
             [name]: value,
         })
     }
+
     const handleForm = (e) => {
       e.preventDefault()
         
@@ -40,13 +41,18 @@ export default function LoginForm() {
         setErrorMessage(`\u25EC La contraseña debe contener letras y números con un máximo de 10`);
         return;
       }
+
+      setUserData({
+        usermail: email,
+        userpassword: password
+      })
+
       setValues({
         email: '',
         password: ''
       });
-
-      updateUser(email, password);
       
+
         axios.post('http://localhost:8080/login', {"email": email, "password": password})
         .then(response => {
             
