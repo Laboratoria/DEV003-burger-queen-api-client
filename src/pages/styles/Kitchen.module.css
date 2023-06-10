@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+
+.kitchenMain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    justify-items: center;
+    --order-content-size: 20px;
+    --order-parraph-color: #450a0a; 
+    --products: #fecaca;
+}
+.order__box {
+    padding: 5px;
+    background-color: #fee2e2;
+    width: 300px;
+    font-family: Raleway;
+    
+}
+.product__info {
+    display: flex;
+    font-size: var(--order-content-size);
+    font-family: Inder;
+    background-color: var(--products);
+}
+.order__box img {
+    width: 130px;
+    height: 100px;
+}
+.orderQty {
+    color: var(--order-parraph-color);
+}
