@@ -26,7 +26,7 @@ export default function Waiter() {
          <div className= {waiterStyle.divbtns}>
              <Link href='/kitchen'><button className={waiterStyle.wbtns}>Cocina</button> </Link>
              
-             <button className={waiterStyle.wbtns}>Órdenes</button>
+             <button className={waiterStyle.wbtns}>Órdenes Listas</button>
          </div>
           </div>
         </header>

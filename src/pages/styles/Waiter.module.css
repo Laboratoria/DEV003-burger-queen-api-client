@@ -32,7 +32,7 @@
     border: 2px solid white;
     border-radius: 10px;
     width: 120px;
-    height: 40px;
+    height: 55px;
     font-size: 20px;
     margin-left: 30px;
 
@@ -41,6 +41,7 @@
     float:right;
     position: relative;
     left: 120px;
+    display: flex;
 }
 .orderBox{
     width: 350px;
@@ -97,7 +98,7 @@
     margin-top: 15px;
 }
 .cleanOrder{
-    background-color: #9B564A;
+    background-color: #7f2424;
     font-family: krub;
     border-radius: 5px;
     border:1px solid white;
@@ -122,7 +123,7 @@
     height: 150px;
 }
 .divproduct{
-    background-color: #4E4A4A;
+    background: linear-gradient(to right , #b2aeaf, 20%, #4E4A4A);
     width: 380px;
     height: 200px;
     display: flex;
@@ -133,7 +134,7 @@
 .addbtn {
     width: 100px;
     height: 35px;
-    background-color: #DD5A44;
+    background-color: #f83b3b;
     border: 1px solid white;
     color:white;
     border-radius: 10px;
