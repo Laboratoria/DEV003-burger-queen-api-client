@@ -1,25 +1,42 @@
 import { useContext } from "react";
+import { TokenContext } from "../components_waiter/tokenContext";
 import { KitchenContext } from "./kitchenContext";
+import axios from "axios";
 import style from '../styles/Kitchen.module.css'
 
 
 export function AllOrder () {
     const orderContent = useContext(KitchenContext)
+    const {loginData} = useContext(TokenContext)
+    const token = loginData.token
+
     const ordered = orderContent.sort((a,b) => b.id - a.id)
  
 
     const handleIsReady = ( parentId) => {
         const orderId = parentId
-        console.log(orderId)
-        //consulta http a localhost / id del elemento a obtener
-        //método PUT para actualizar
+        //contador de cuanto tardó en cumplirse
+        axios.get(`http://localhost:8080/orders/${orderId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            const savedOrder = response.data
+            axios.put(`http://localhost:8080/orders/${orderId}`, {
+                ...savedOrder,
+                "status": "Ready to deliver"
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            .then(console.log)
+            .catch(console.log)
+        })
+        .catch(console.log)
         
-    }
-    //Ejecucion dentro de then al finalizar consulta http
-    //checked a true y deshabilitamos el checkbox
-    const handleDisabled = (e) => {
-        e.target.setAttribute('checked', true)
-        e.target.setAttribute('disabled', true)
+        
     }
 
     return (
@@ -56,7 +73,10 @@ export function AllOrder () {
                     type="Checkbox" 
                     id={`checkbox-${element.id}`}
                     className={style.checkbox} 
-                    onChange={() => {handleIsReady(element.id)}}
+                    onChange={(e) => {
+                        handleIsReady(element.id); 
+                        e.target.setAttribute('disabled', true)
+                    }}
                     />
                     <span  className={style.slider}></span>
                   </label>

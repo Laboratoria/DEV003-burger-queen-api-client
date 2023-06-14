@@ -6,3 +6,23 @@
 body {
     margin: 0;
 }
+
+::-webkit-scrollbar, ::-webkit-scrollbar:horizontal {
+    width: 10px;
+   
+}
+  
+::-webkit-scrollbar-track {
+    
+    background: #ffc7c7; 
+}
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar:horizontal {
+    background: #fd5e5e; 
+    border: 2px solid #ffc7c7;
+    border-radius: 4px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e51d1d; 
+}
