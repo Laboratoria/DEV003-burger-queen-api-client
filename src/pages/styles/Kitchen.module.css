@@ -12,6 +12,7 @@
 }
 .order__box {
     padding: 20px;
+    margin-top: 30px;
     background-color: #fee2e2;
     width: 290px;
     font-family: Raleway;
@@ -94,4 +95,10 @@
 .checkbox:checked + .slider:before {
     background-color: white;
     transform: translateX(2em);
+}
+.kitchenbkg {
+    opacity: 0.5;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
 }

@@ -11,7 +11,6 @@ const patterns = {
 
 export default function LoginForm() {
 
-  const {setUserData} = useContext(TokenContext)
   const router = useRouter()
 
     const [values, setValues] = useState({
@@ -41,12 +40,6 @@ export default function LoginForm() {
         setErrorMessage(`\u25EC La contraseña debe contener letras y números con un máximo de 10`);
         return;
       }
-
-      setUserData({
-        usermail: email,
-        userpassword: password
-      })
-
       setValues({
         email: '',
         password: ''

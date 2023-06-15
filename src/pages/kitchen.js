@@ -8,6 +8,7 @@ export default function Kitchen() {
     <>
       <KitchenContextProvider>
         <main className={style.kitchenMain} >
+          <img src="/kitchen.jpg" className={style.kitchenbkg}/>
          <AllOrder/>   
         </main>
       </KitchenContextProvider>

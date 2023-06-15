@@ -36,7 +36,6 @@ export function AllOrder () {
         })
         .catch(console.log)
         
-        
     }
 
     return (
@@ -76,6 +75,7 @@ export function AllOrder () {
                     onChange={(e) => {
                         handleIsReady(element.id); 
                         e.target.setAttribute('disabled', true)
+                        e.target.setAttribute('checked', true)
                     }}
                     />
                     <span  className={style.slider}></span>
