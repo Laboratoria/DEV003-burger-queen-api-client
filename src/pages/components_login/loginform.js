@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { useState, useEffect, useContext } from 'react'
-import { TokenContext } from '../components_waiter/tokenContext'
 import styles from '../styles/Login.module.css'
 import { useRouter } from 'next/router'
+import { TokenContext } from '../components_waiter/tokenContext'
 
 const patterns = {
     email:  /^\w.+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$/,
@@ -12,6 +12,7 @@ const patterns = {
 export default function LoginForm() {
 
   const router = useRouter()
+  const {setLoginData} = useContext(TokenContext);
 
     const [values, setValues] = useState({
         email: '',
@@ -48,9 +49,10 @@ export default function LoginForm() {
 
         axios.post('http://localhost:8080/login', {"email": email, "password": password})
         .then(response => {
-            
-            localStorage.setItem('userToken', response.data.accessToken);
-            localStorage.setItem('userId', response.data.user.id);
+            setLoginData({
+              token : response.data.accessToken,
+              userId: response.data.user.id
+            })
             
             setTimeout(() => {
               router.push('/waiter');
