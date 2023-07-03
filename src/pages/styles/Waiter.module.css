@@ -15,25 +15,24 @@
     align-items: center;
 }
 .logoBq{
-    border-radius: 50%;
     margin-left: 10px;
     margin-top: 10px;
 }
 .bqTitle{
    font-family: "Inder";
+   font-size: 30px;
+   position: relative;
    color: white;
-   margin-left: 5px;
+   left: -30px;
 }
-.queen{
-    color: #DD5A44;
-}
+
 .wbtns{
     color:black;
     background-color: #FF7979;
     border: 2px solid white;
     border-radius: 10px;
     width: 120px;
-    height: 40px;
+    height: 55px;
     font-size: 20px;
     margin-left: 30px;
 
@@ -41,7 +40,8 @@
 .divbtns{
     float:right;
     position: relative;
-    left: 140px;
+    left: 120px;
+    display: flex;
 }
 .orderBox{
     width: 350px;
@@ -49,16 +49,18 @@
     border-radius: 10px;
     background-color:#4E4A4A;
     margin-top: 100px;
+    --color: #FFFFFF;
 }
 .client{
     border-radius: 5px;
-    border-bottom: solid white 2px;
-    outline: none;
     margin-left: 50px;
-    color:white;
-    background-color: transparent;
     width: 100px;
     height: 35px;
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    border-bottom: 2px solid var(--color) ;
 }
 .client::placeholder{
     color: white;
@@ -67,13 +69,14 @@
 }
 .table{
     border-radius: 5px;
-    border-bottom: solid white 2px;
-    outline: none;
     margin-left: 50px;
-    color:white;
-    background-color: transparent;
     width: 80px;
     height: 35px;
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    border-bottom: 2px solid var(--color) ;
 }
 .table::placeholder{
     color: white;
@@ -87,17 +90,22 @@
     margin-left: 20px;
 
 }
+.orderBtns {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    justify-content: space-around;
+    margin-top: 15px;
+}
 .cleanOrder{
-    background-color: #9B564A;
+    background-color: #7f2424;
     font-family: krub;
     border-radius: 5px;
     border:1px solid white;
+    font-size: 17px;
     color: white;
     height: 40px;
-    width: 120px;
-    position: relative;
-    top: 18px;
-    right: 50px;
+    width: 140px;
 }
 .sendKitchen{
     background-color: #DD5A44;
@@ -108,9 +116,6 @@
     color: white;
     height: 40px;
     width: 100px;
-    position: relative;
-    top: 20px;
-    left: 50px;
 }
 .images{
     margin-top: 15px;
@@ -118,7 +123,7 @@
     height: 150px;
 }
 .divproduct{
-    background-color: #4E4A4A;
+    background: linear-gradient(to right , #b2aeaf, 20%, #4E4A4A);
     width: 380px;
     height: 200px;
     display: flex;
@@ -129,28 +134,29 @@
 .addbtn {
     width: 100px;
     height: 35px;
-    background-color: #DD5A44;
+    background-color: #f83b3b;
     border: 1px solid white;
     color:white;
     border-radius: 10px;
     position: relative;
-    top: 120px;
+    top: 140px;
     left: 70px;
     font-size: 20px;
 }
 .productprice{
     position: absolute;
-    top: 80px;
-    left: 220px;
+    top: 75px;
+    left: 245px;
     font-size: 20px;
     font-family: 'Krub';
 }
 .product{
     position: absolute;
-    top: 25px;
-    left: 220px;
+    top: 10px;
+    left: 200px;
     font-size: 20px;
     font-family: 'Krub';
+    margin-right: 5px;
 }
 .desayunoBtn{
     color: white;
@@ -229,6 +235,7 @@
     font-family: 'Lemon';
     text-decoration: underline;
     text-decoration-color: #FF7979;
+    color: white;
 }
 .divOrder {
     display: flex;

@@ -1,24 +1,34 @@
-import {useState, useEffect, createContext} from 'react'
+import {useState, useEffect, createContext, useContext} from 'react'
+import { TokenContext } from './tokenContext'
 import axios from 'axios'
 
 export const ProductsContext = createContext()
-export const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBydWViYWx1aXNhQGdtYWlsLmNvbSIsImlhdCI6MTY4Mzg0MDYyNCwiZXhwIjoxNjgzODQ0MjI0LCJzdWIiOiIzIn0.HK0xum8F8ZVvvPU7TyH6gLnMB9JsMcw_eYN4kkBPREw'
+
 export const ProductContextProvider = ({children}) => {
+    
     const [products, setProducts] = useState([])
-
+    const {loginData} = useContext(TokenContext)
+    
+    const token = loginData.token
     useEffect(() => {
-        
-        axios.get('http://localhost:8080/products', {
-            headers: {
+        const getData = async () => {
+          try {
+            const response = await axios.get('http://localhost:8080/products', {
+              headers: {
                 Authorization: `Bearer ${token}`
-            }
-        })
-        .then(response => {
-            setProducts(response.data)
-        })
-        .catch(console.log)
-    }, [])
-
+              }
+            });
+            setProducts(response.data);
+          } catch (error) {
+            console.log(error);
+          }
+        };
+      
+        if (token) {
+          getData();
+        }
+      }, [token]);
+   
     return (
         <ProductsContext.Provider value={products}>
            {children}

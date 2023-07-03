@@ -11,23 +11,22 @@ export default function Waiter() {
     return (
         <>
         <header>
-
           <div className= {waiterStyle.header}>
 
           <Image 
           className={waiterStyle.logoBq}
-          src="/bq-logo.jpg"
+          src="/bqlogo.png"
           alt= "BQ logo"
-          width={100}
-          height={100}
+          width={170}
+          height={140}
           priority
           />
 
-          <h1 className= {waiterStyle.bqTitle}>BURGER <span className={waiterStyle.queen} >QUEEN</span></h1>
+          <h1 className= {waiterStyle.bqTitle}>Burger Queen</h1>
          <div className= {waiterStyle.divbtns}>
              <Link href='/kitchen'><button className={waiterStyle.wbtns}>Cocina</button> </Link>
              
-             <button className={waiterStyle.wbtns}>Órdenes</button>
+             <button className={waiterStyle.wbtns}>Órdenes Listas</button>
          </div>
           </div>
         </header>
@@ -50,7 +49,6 @@ export default function Waiter() {
         height={730}
         priority
         />
-        <button className={waiterStyle.exitBtn}>SALIR</button>
         </>
     )
 }

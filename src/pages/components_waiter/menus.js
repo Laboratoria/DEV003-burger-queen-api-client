@@ -2,6 +2,8 @@ import waiter from '../styles/Waiter.module.css'
 import { useState, useContext, useEffect} from "react"
 import RenderMenus from './rendermenus'
 import { ProductsContext } from './productsContext'
+import { TokenContext } from './tokenContext'
+import { useRouter } from 'next/router'
 
 function ProductsMenus() {
 
@@ -53,13 +55,24 @@ function ProductsMenus() {
 }
 
 export default function Menus(){
+  
+  const {loginData, setLoginData} = useContext(TokenContext)
+  const router = useRouter()
+  
+  const exitWaiter = () => {
+    router.push('/')
+    setLoginData({
+      token: localStorage.setItem('userToken', ''),
+      userId: localStorage.setItem('userId', '')
+    })
+  };
     return (
       <div className={waiter.menuComp}>
 
         <h2 className={waiter.underline}>menús</h2>
         <div></div>
         <ProductsMenus/>
-
+        <button onClick={exitWaiter} className={waiter.exitBtn}>SALIR</button>
       </div>
     )
 }

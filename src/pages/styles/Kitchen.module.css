@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+
+.kitchenMain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    justify-items: center;
+    --order-content-size: 20px;
+    --order-parraph-color: #450a0a; 
+    --order-background: linear-gradient(to bottom, #ffdada,90%,#ffa0a0);
+}
+.order__box {
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #fee2e2;
+    width: 290px;
+    font-family: Raleway;
+    border-radius: 10px;
+    background-image: var(--order-background);
+    
+}
+.product__info {
+    display: flex;
+    align-items: flex-start;
+    font-size: var(--order-content-size);
+    font-family: Inder;
+    border-bottom: 2px solid;
+}
+.order__box img {
+    width: 130px;
+    height: 100px;
+}
+.bqtitle {
+    position: relative;
+    left: -30px;
+    color: #a01414;
+}
+.orderQty {
+    color: white;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    padding: 5px;
+    margin-right: 5px;
+    background-color: var(--order-parraph-color);
+}
+.client {
+    color: #801c1c;
+}
+.check__div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lbl__checkbox input {
+    display: none;
+}
+.lbl__checkbox {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 35px;
+    cursor: pointer;
+    left: 15px;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 30px;
+    border: 1px solid #ff234b;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: #ff234b;
+    transition: .4s;
+}
+
+.checkbox:checked + .slider {
+    background-color: #b10323;
+}
+  
+.checkbox:checked + .slider:before {
+    background-color: white;
+    transform: translateX(2em);
+}
+.kitchenbkg {
+    opacity: 0.5;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}

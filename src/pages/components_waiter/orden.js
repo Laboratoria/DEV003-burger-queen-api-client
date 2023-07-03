@@ -1,11 +1,10 @@
 import waiter from '../styles/Waiter.module.css'
+import { useState, useContext } from 'react'
+import { TokenContext } from './tokenContext'
 import { TotalContext } from './totalContext'
-import { useContext } from 'react'
 import { OrderContext } from './orderContext'
 import RenderOrderProduct from './renderorder'
-import { useState } from 'react'
 import axios from 'axios'
-import { token } from './productsContext'
 import { showDate } from './date'
 
 export default function Orden(){
@@ -13,15 +12,18 @@ export default function Orden(){
   const [client, setClient] = useState('')
   const [total, setTotal] = useContext(TotalContext) 
   const [order, setOrder] = useContext(OrderContext)
+  const {loginData} = useContext(TokenContext)
+  
+  const token = loginData.token
   
   function sendToKitchen() {
 
     setClient('')
     setOrder([])
     setTotal(0)
-    
+  
     const orderData = {
-      userId: 3,
+      userId: loginData.userId,
       client: client,
       products: order,
       status: 'pending',
@@ -75,8 +77,8 @@ export default function Orden(){
         </div>
 
         <div className= {waiter.orderBtns}>
-        <button onClick={() => {setTotal(0); setOrder([]); setClient('') }} className={waiter.cleanOrder}>Limpiar Orden</button>
-        <button onClick={sendToKitchen} className={waiter.sendKitchen}>Enviar</button>
+          <button onClick={sendToKitchen} className={waiter.sendKitchen}>Enviar</button>
+          <button onClick={() => {setTotal(0); setOrder([]); setClient('') }} className={waiter.cleanOrder}>Limpiar Orden</button>
         </div>
 
       </div>
