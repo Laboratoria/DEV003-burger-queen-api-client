@@ -1,6 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import Waiter from "@/pages/waiter";
-import '@testing-library/jest-dom';
  
 jest.mock('axios', () => ({
     get: () => {
@@ -27,10 +26,14 @@ jest.mock('axios', () => ({
     }
 })) 
 
+/*Este test falla porque no ha habido un inicio de sesión 
+Por consiguiente no existe la data del login, principalmente el token
+necesitado para la consulta http y obtener la data de los productos*/ 
+
 describe('Home', () => {
-  it('renders a header with title', async () => {
+  it('renders a header with title', async () => { 
     render(<Waiter />);
- 
+
     const heading = screen.getByRole('heading', {
       name: "BURGER QUEEN",
     });

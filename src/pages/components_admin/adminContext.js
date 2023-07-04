@@ -22,7 +22,7 @@ export default function AdminContextProvider({children}) {
         })
         .then(res => setUsersData(res))
         .catch(err => console.error(err))
-    }}, [])
+    }}, [token])
 
     return (
       <AdminContext.Provider value={usersData} >

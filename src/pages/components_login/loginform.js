@@ -75,7 +75,7 @@ export default function LoginForm() {
    
     return (
         <>
-        <form className={styles.form_container} onSubmit={handleForm} >
+        <form className={styles.form_container} onSubmit={handleForm} role='form' >
             <h2 className={styles.formTitle}>Inicia <span className={styles.formTitleTwo}>sesión</span></h2>
 
             <div className={styles.input__group}>
@@ -91,7 +91,7 @@ export default function LoginForm() {
             <input className={styles.login_submit}  type="submit" value="Ingresar"/>
         </form>
       
-        <div className={styles.errorsDiv} style= {{opacity: errorMessage ? 1 : 0}}>
+        <div data-testid = "errorDiv" className={styles.errorsDiv} style= {{opacity: errorMessage ? 1 : 0}}>
           <p className={styles.errors} >{errorMessage}</p>
         </div>
       </>
